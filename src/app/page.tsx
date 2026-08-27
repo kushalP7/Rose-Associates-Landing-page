@@ -17,6 +17,7 @@ import {
   Lock, 
   Database,
   ChevronRight,
+  ChevronLeft,
   TrendingUp,
   FileCheck2,
   PieChart,
@@ -688,13 +689,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mobile / Tablet Centered Wheel */}
-            <div className="lg:hidden flex justify-center relative mt-6 pb-6">
-              <div className="relative w-full max-w-[340px] sm:max-w-[440px]">
-                <CommunityWedgeWheel />
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -883,8 +877,78 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Mobile / Tablet Quick Page Selector Switcher with Nav Arrows */}
+          <div className="flex xl:hidden justify-center items-center gap-1.5 pt-1 pb-2">
+            <button
+              onClick={() => setActiveFannedPage(prev => (prev > 1 ? prev - 1 : 3))}
+              className="p-2 rounded-xl bg-white text-[#B5111B] border border-slate-200 hover:bg-red-50 hover:border-red-200 transition-all cursor-pointer shadow-2xs flex items-center gap-1 text-xs font-bold"
+              aria-label="Previous Page"
+            >
+              <ChevronLeft className="w-4 h-4 text-[#B5111B]" />
+              <span className="hidden xs:inline">Prev</span>
+            </button>
+
+            <button
+              onClick={() => setActiveFannedPage(1)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer ${
+                activeFannedPage === 1
+                  ? "bg-[#B5111B] text-white shadow-xs ring-2 ring-[#B5111B]/20"
+                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+              }`}
+            >
+              Page 1: Cover
+            </button>
+            <button
+              onClick={() => setActiveFannedPage(2)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer ${
+                activeFannedPage === 2
+                  ? "bg-[#B5111B] text-white shadow-xs ring-2 ring-[#B5111B]/20"
+                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+              }`}
+            >
+              Page 2: Matrix
+            </button>
+            <button
+              onClick={() => setActiveFannedPage(3)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer ${
+                activeFannedPage === 3
+                  ? "bg-[#B5111B] text-white shadow-xs ring-2 ring-[#B5111B]/20"
+                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"
+              }`}
+            >
+              Page 3: Roadmap
+            </button>
+
+            <button
+              onClick={() => setActiveFannedPage(prev => (prev < 3 ? prev + 1 : 1))}
+              className="p-2 rounded-xl bg-white text-[#B5111B] border border-slate-200 hover:bg-red-50 hover:border-red-200 transition-all cursor-pointer shadow-2xs flex items-center gap-1 text-xs font-bold"
+              aria-label="Next Page"
+            >
+              <span className="hidden xs:inline">Next</span>
+              <ChevronRight className="w-4 h-4 text-[#B5111B]" />
+            </button>
+          </div>
+
           {/* 3D FANNED PAPER STACK CONTAINER WITH REAL ADMIN PORTAL CALLOUTS */}
-          <div className="relative min-h-[640px] flex items-center justify-center py-6 px-4 overflow-visible">
+          <div className="relative min-h-[580px] sm:min-h-[640px] flex items-center justify-center py-6 px-2 sm:px-4 overflow-visible">
+            
+            {/* Mobile / Tablet Floating Left Arrow Control */}
+            <button
+              onClick={() => setActiveFannedPage(prev => (prev > 1 ? prev - 1 : 3))}
+              className="xl:hidden absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 text-[#B5111B] border-2 border-[#B5111B] shadow-xl flex items-center justify-center hover:bg-[#B5111B] hover:text-white transition-all cursor-pointer"
+              aria-label="Previous Page"
+            >
+              <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
+            </button>
+
+            {/* Mobile / Tablet Floating Right Arrow Control */}
+            <button
+              onClick={() => setActiveFannedPage(prev => (prev < 3 ? prev + 1 : 1))}
+              className="xl:hidden absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 text-[#B5111B] border-2 border-[#B5111B] shadow-xl flex items-center justify-center hover:bg-[#B5111B] hover:text-white transition-all cursor-pointer"
+              aria-label="Next Page"
+            >
+              <ChevronRight className="w-6 h-6 stroke-[2.5]" />
+            </button>
             
             {/* ANNOTATION 1 (Top Left): Official 12-Step Prosperity Guide */}
             <div 
@@ -1068,9 +1132,9 @@ export default function Home() {
               {/* PAGE 1: COVER PAGE (Exact Match to PDF Page 1) */}
               <div 
                 onClick={() => setActiveFannedPage(1)}
-                className={`absolute left-[2%] sm:left-[8%] top-2 w-[290px] sm:w-[350px] h-[520px] sm:h-[560px] bg-white text-slate-900 rounded-2xl p-6 space-y-3.5 cursor-pointer transition-all duration-500 ease-out origin-bottom-left flex flex-col justify-between ${
+                className={`absolute left-[1%] xs:left-[2%] sm:left-[8%] top-2 w-[275px] xs:w-[310px] sm:w-[350px] h-[500px] xs:h-[520px] sm:h-[560px] bg-white text-slate-900 rounded-2xl p-4 xs:p-6 space-y-3.5 cursor-pointer transition-all duration-500 ease-out origin-bottom-left flex flex-col justify-between ${
                   activeFannedPage === 1 
-                    ? "z-30 scale-105 sm:scale-108 rotate-0 shadow-[0_35px_90px_-15px_rgba(0,0,0,0.6)] ring-4 ring-[#B5111B]/30 border-2 border-[#B5111B] opacity-100" 
+                    ? "z-30 scale-102 sm:scale-108 rotate-0 shadow-[0_35px_90px_-15px_rgba(0,0,0,0.6)] ring-4 ring-[#B5111B]/30 border-2 border-[#B5111B] opacity-100" 
                     : "z-10 -rotate-6 scale-98 border border-slate-200 shadow-xl opacity-90 hover:opacity-100 hover:scale-100"
                 }`}
               >
@@ -1126,9 +1190,9 @@ export default function Home() {
               {/* PAGE 2: MIDDLE PAGE (Exact Match to PDF Page 6 - Quality of Life Scorecard) */}
               <div 
                 onClick={() => setActiveFannedPage(2)}
-                className={`absolute top-0 w-[310px] sm:w-[380px] h-[550px] sm:h-[600px] bg-white text-slate-900 rounded-2xl p-4 sm:p-5 space-y-2 cursor-pointer transition-all duration-500 ease-out origin-bottom-center flex flex-col justify-between overflow-hidden ${
+                className={`absolute top-0 w-[285px] xs:w-[325px] sm:w-[380px] h-[520px] xs:h-[550px] sm:h-[600px] bg-white text-slate-900 rounded-2xl p-3.5 xs:p-4 sm:p-5 space-y-2 cursor-pointer transition-all duration-500 ease-out origin-bottom-center flex flex-col justify-between overflow-hidden ${
                   activeFannedPage === 2 
-                    ? "z-30 scale-105 sm:scale-108 rotate-0 shadow-[0_35px_90px_-15px_rgba(0,0,0,0.6)] border-4 border-[#8F0D15] ring-4 ring-[#B5111B]/30 opacity-100" 
+                    ? "z-30 scale-102 sm:scale-108 rotate-0 shadow-[0_35px_90px_-15px_rgba(0,0,0,0.6)] border-4 border-[#8F0D15] ring-4 ring-[#B5111B]/30 opacity-100" 
                     : "z-20 rotate-4 scale-98 border border-slate-200 shadow-xl opacity-90 hover:opacity-100 hover:scale-100"
                 }`}
               >
@@ -1445,9 +1509,9 @@ export default function Home() {
               {/* PAGE 3: BACK PAGE (Exact Authentic Match to PDF Page 31 - Next Steps & Resources) */}
               <div 
                 onClick={() => setActiveFannedPage(3)}
-                className={`absolute right-[2%] sm:right-[8%] top-0 w-[310px] sm:w-[380px] h-[550px] sm:h-[600px] bg-white text-slate-900 rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-500 ease-out origin-bottom-right flex flex-col justify-between overflow-hidden ${
+                className={`absolute right-[1%] xs:right-[2%] sm:right-[8%] top-0 w-[285px] xs:w-[325px] sm:w-[380px] h-[520px] xs:h-[550px] sm:h-[600px] bg-white text-slate-900 rounded-2xl p-3.5 xs:p-5 sm:p-6 cursor-pointer transition-all duration-500 ease-out origin-bottom-right flex flex-col justify-between overflow-hidden ${
                   activeFannedPage === 3 
-                    ? "z-30 scale-105 sm:scale-108 rotate-0 shadow-[0_35px_90px_-15px_rgba(0,0,0,0.6)] border-4 border-[#8F0D15] ring-4 ring-[#B5111B]/30 opacity-100" 
+                    ? "z-30 scale-102 sm:scale-108 rotate-0 shadow-[0_35px_90px_-15px_rgba(0,0,0,0.6)] border-4 border-[#8F0D15] ring-4 ring-[#B5111B]/30 opacity-100" 
                     : "z-10 rotate-8 scale-98 border border-slate-200 shadow-xl opacity-90 hover:opacity-100 hover:scale-100"
                 }`}
               >
