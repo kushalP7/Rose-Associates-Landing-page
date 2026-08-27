@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(chromium-cli --session app)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node -e \"console.log\\(require.resolve\\('playwright'\\)\\)\")",
+      "Bash(mkdir -p 'C:\\\\Users\\\\sit404\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-sit404-Desktop-Projects-Rose-Associates\\\\cc39f1c6-a164-45f0-8eb7-58859d505098\\\\scratchpad/pwtest')",
+      "Bash(npm init *)",
+      "Bash(npm install *)"
+    ]
+  }
+}
