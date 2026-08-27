@@ -812,7 +812,7 @@ export default function SettingsPage() {
                   <div className="text-xs space-y-2 text-slate-700 leading-relaxed">
                     <p className="font-bold text-slate-900">Dear Johnathan Smith,</p>
                     <p>
-                      Thank you for partnering with <strong>{companyName}</strong> for your <strong>Metropolis Master Plan 2026</strong> assessment. Your annual Platform Subscription (<strong>$149/year</strong>) is active. This automated notice is triggered <strong>{reminderNoticeDays} days</strong> prior to your report generation deadline as configured in your billing policy (Net {partialPaymentDeadline} days).
+                      Thank you for partnering with <strong>{companyName}</strong> for your <strong>Metropolis Master Plan 2026</strong> assessment. This automated notice is triggered <strong>{reminderNoticeDays} days</strong> prior to your payment deadline as configured in your billing policy (Net {partialPaymentDeadline} days).
                     </p>
                   </div>
 
@@ -830,16 +830,16 @@ export default function SettingsPage() {
                         <div className="font-bold text-slate-900">Metropolis Master Plan 2026</div>
                       </div>
                       <div>
-                        <span className="text-slate-500">Platform Subscription:</span>
-                        <div className="font-bold text-emerald-700">$149 Paid</div>
+                        <span className="text-slate-500">Selected Billing Plan:</span>
+                        <div className="font-bold text-slate-900">Single Report Plan ($500)</div>
                       </div>
                       <div>
-                        <span className="text-slate-500">Report Plan Fee:</span>
-                        <div className="font-bold text-slate-900">$99 / Report</div>
+                        <span className="text-slate-500">Total Plan Value:</span>
+                        <div className="font-bold text-slate-900">$2,500 / Year</div>
                       </div>
                       <div>
-                        <span className="text-slate-500">Report Balance Due:</span>
-                        <div className="font-extrabold text-amber-700 text-xs">$99 Pending</div>
+                        <span className="text-slate-500">Single Report Fee (20%):</span>
+                        <div className="font-extrabold text-amber-700 text-xs">$500 Pending</div>
                       </div>
                     </div>
                   </div>
@@ -847,7 +847,7 @@ export default function SettingsPage() {
                   {/* CTA Button */}
                   <div className="pt-2 flex justify-center">
                     <div className="bg-[#B5111B] text-white px-6 py-2.5 rounded-xl text-xs font-bold shadow-md cursor-pointer">
-                      Settle Report Generation Fee ($99)
+                      Settle Single Report Fee ($500)
                     </div>
                   </div>
 
@@ -896,7 +896,7 @@ export default function SettingsPage() {
                   <div className="text-xs space-y-2 text-slate-700 leading-relaxed">
                     <p className="font-bold text-slate-900">Dear Elena Rodriguez,</p>
                     <p>
-                      We are pleased to deliver your completed <strong>Hudson Yards District Vision 2026</strong> Master Plan Scorecard Assessment PDF report. Full payment for the Platform Subscription ($149) and Report Generation Plan ($99) has been verified.
+                      We are pleased to deliver your completed <strong>Hudson Yards District Vision 2026</strong> Master Plan Scorecard Assessment PDF report. Full payment for the Total Plan ($2,500) has been verified.
                     </p>
                   </div>
 

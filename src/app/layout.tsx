@@ -10,8 +10,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Prosperity Builder Scorecard",
-  description: "Community assessment tool by Rose Associates",
+  title: "Rose Associates — Prosperity Builder Scorecard",
+  description: "Strategic Real Estate & Economic Development Decision Platform by Rose Associates",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

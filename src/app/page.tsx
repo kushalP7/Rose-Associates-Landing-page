@@ -438,7 +438,7 @@ function CommunityWedgeWheel() {
           </g>
         ))}
 
-        {/* Solid Refined Red Divider Spokes (Reduced Border) */}
+        {/* Solid Refined White Divider Spokes */}
         {vertices.map((v, idx) => (
           <line
             key={idx}
@@ -446,20 +446,20 @@ function CommunityWedgeWheel() {
             y1={cy}
             x2={v.x}
             y2={v.y}
-            stroke="#A30A14"
+            stroke="#FFFFFF"
             strokeWidth="5"
             strokeLinecap="round"
           />
         ))}
 
         {/* Center Hub */}
-        <circle cx={cx} cy={cy} r="4.5" fill="#A30A14" />
+        <circle cx={cx} cy={cy} r="4.5" fill="#FFFFFF" />
 
-        {/* Outer Faceted Polygonal Red Rim (Reduced Border) */}
+        {/* Outer Faceted Polygonal White Rim */}
         <polygon
           points={polygonPointsString}
           fill="none"
-          stroke="#A30A14"
+          stroke="#FFFFFF"
           strokeWidth="6"
           strokeLinejoin="round"
         />
@@ -485,10 +485,10 @@ export default function Home() {
   // Active Scorecard Category Accordion State
   const [activeAccordionCat, setActiveAccordionCat] = React.useState<string | null>("accessibility")
 
-  // --- PRICING RATES MATCHING SETTINGS MODULE ($149 Subscription / $99 Report / $248 Bundle) ---
-  const subscriptionPrice = 149
-  const reportPrice = 99
-  const bundlePrice = subscriptionPrice + reportPrice // $248
+  // --- PRICING RATES FOR LANDING PAGE ($1,000 Report + $800 Subscription = $1,800 All-In-One) ---
+  const reportPrice = 1000
+  const subscriptionPrice = 800 // $1,000 - 20% ($200) = $800
+  const totalPlanPrice = reportPrice + subscriptionPrice // $1,800
 
   React.useEffect(() => {
     setMounted(true)
@@ -2121,16 +2121,16 @@ export default function Home() {
           {/* Header & Formula Pill */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-              Sequential Billing Plans
+              Billing Plan Options
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              Official pricing structure configured in Prosperity Builder Settings. Platform subscription on account login and report generation plan upon final audit completion.
+              Select between a single scorecard audit report payment or our full All-In-One platform subscription package.
             </p>
 
             {/* Formula Summary Badge matching Settings */}
             <div className="inline-flex items-center gap-2 text-xs font-bold text-[#B5111B] bg-red-50 px-4 py-2 rounded-full border border-red-200 shadow-2xs">
               <Calculator className="w-4 h-4 text-[#B5111B]" />
-              <span>Official Settings Formula: <strong className="font-extrabold text-slate-900">${subscriptionPrice} (Subscription) + ${reportPrice} (Report) = ${bundlePrice} / Year</strong></span>
+              <span>Plan Calculation: <strong className="font-extrabold text-slate-900">${reportPrice} (Report Plan) + ${subscriptionPrice} (Subscription Plan) = ${totalPlanPrice} / Year</strong></span>
             </div>
           </div>
 
@@ -2142,27 +2142,27 @@ export default function Home() {
                   <Activity className="w-4 h-4" />
                 </div>
                 <span className="text-xs font-black uppercase tracking-wider text-slate-900">
-                  Sequential Billing Workflow
+                  Billing Plan Architecture
                 </span>
               </div>
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-2xs w-fit flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Active System Flow</span>
+                <span>Active 2-Plan System</span>
               </span>
             </div>
 
             <div className="flex flex-col lg:flex-row items-center gap-3">
               
-              {/* Step 1: Account Login */}
+              {/* Step 1: Single Report Option */}
               <div className="flex-1 p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 flex items-start gap-4 w-full h-full">
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0">
-                  <User className="w-5 h-5" />
+                  <FileText className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">01. Account Login</div>
-                  <div className="font-extrabold text-slate-900 text-sm">Platform Subscription (${subscriptionPrice}/yr)</div>
+                  <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">Option 01: Single Audit</div>
+                  <div className="font-extrabold text-slate-900 text-sm">Single Report Plan (${reportPrice} / Report)</div>
                   <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                    Required upfront on login to unlock platform access, section maker & project management.
+                    Single project audit calculation. Unlocks executive scorecard PDF generation & seal.
                   </p>
                 </div>
               </div>
@@ -2172,35 +2172,16 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </div>
 
-              {/* Step 2: Order Stepper */}
+              {/* Step 2: All-In-One Option */}
               <div className="flex-1 p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 flex items-start gap-4 w-full h-full">
                 <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0">
-                  <ReceiptText className="w-5 h-5" />
+                  <Calculator className="w-5 h-5" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">02. Order Stepper</div>
-                  <div className="font-extrabold text-slate-900 text-sm">Audit Steps 1 to 5</div>
+                  <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">Option 02: All-In-One Package</div>
+                  <div className="font-extrabold text-slate-900 text-sm">Total All-In-One Plan (${totalPlanPrice} / Year)</div>
                   <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                    Complete questionnaires, 3rd party web data audit & score calculation.
-                  </p>
-                </div>
-              </div>
-
-              {/* Connecting Arrow 2 */}
-              <div className="hidden lg:flex items-center justify-center text-slate-300 shrink-0 px-1">
-                <ArrowRight className="w-5 h-5" />
-              </div>
-
-              {/* Step 3: Final Delivery */}
-              <div className="flex-1 p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 flex items-start gap-4 w-full h-full">
-                <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0">
-                  <FileText className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">03. Final Delivery</div>
-                  <div className="font-extrabold text-slate-900 text-sm">Report Plan (${reportPrice} / Report)</div>
-                  <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                    Paid upon report generation to unlock official PDF download & verified stamp.
+                    Complete bundle: ${reportPrice} Report + ${subscriptionPrice} Subscription = ${totalPlanPrice}/yr.
                   </p>
                 </div>
               </div>
@@ -2208,67 +2189,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 3 Real Plans Matching Settings Module */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch pt-2">
+          {/* 2 Real Plans Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-2 max-w-5xl mx-auto">
             
-            {/* PLAN 1: Platform Subscription Plan ($149 / Year) */}
+            {/* PLAN 1: Single Report Plan ($1,000 / Report) */}
             <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow">
               <div className="space-y-5">
                 <div className="space-y-1.5">
-                  <div className="text-xs font-black text-[#B5111B] uppercase tracking-wider">Step 1 Billing</div>
-                  <h3 className="text-lg font-bold text-slate-900">Platform Subscription Plan</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">Ongoing platform access, unlimited master plans, team seats & executive dashboards.</p>
-                </div>
-
-                <div className="pt-2 border-t border-slate-100 space-y-1.5">
-                  <div className="text-4xl font-black text-slate-900">
-                    ${subscriptionPrice}
-                    <span className="text-xs font-semibold text-slate-400"> /Year</span>
-                  </div>
-                  <span className="inline-block text-[11px] font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200">
-                    Paid Upon Account Login
-                  </span>
-                </div>
-
-                <ul className="space-y-3 pt-2 text-xs text-slate-700 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Full Platform & Dashboard Access</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Projects Control Center & Assignment</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Custom Section Maker & Schema Engine</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Real-Time Multi-Axis Analytics Charts</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Multi-User Regional Team Collaboration</span>
-                  </li>
-                </ul>
-              </div>
-
-              <Link
-                href="/login"
-                className="w-full bg-[#0A101D] hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm py-3.5 rounded-xl shadow-xs transition-all text-center block cursor-pointer"
-              >
-                Sign In to Subscribe (${subscriptionPrice}/yr)
-              </Link>
-            </div>
-
-            {/* PLAN 2: Report Generation Plan ($99 / Report) */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow">
-              <div className="space-y-5">
-                <div className="space-y-1.5">
-                  <div className="text-xs font-black text-[#B5111B] uppercase tracking-wider">Step 2 Billing</div>
-                  <h3 className="text-lg font-bold text-slate-900">Report Generation Plan</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">Official scorecard audit calculations, certified PDF report delivery & verification stamp.</p>
+                  <div className="text-xs font-black text-[#B5111B] uppercase tracking-wider">Single Report Option</div>
+                  <h3 className="text-xl font-bold text-slate-900">Single Report Plan</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">Official scorecard audit calculation, single project assessment PDF delivery & verified stamp.</p>
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 space-y-1.5">
@@ -2288,7 +2218,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>3-Page Executive PDF Export Download</span>
+                    <span>Executive PDF Export Download</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
@@ -2296,7 +2226,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Action vs Inaction 5-Year Projections</span>
+                    <span>Action vs Inaction Projections</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
@@ -2307,51 +2237,68 @@ export default function Home() {
 
               <Link
                 href="/login"
-                className="w-full bg-[#0A101D] hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm py-3.5 rounded-xl shadow-xs transition-all text-center block cursor-pointer"
+                className="w-full bg-[#0A101D] hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm py-3.5 rounded-xl shadow-xs transition-all text-center block cursor-pointer mt-4"
               >
                 Buy Single Report (${reportPrice})
               </Link>
             </div>
 
-            {/* COMBINED PLAN: Combined Subscription & Report Plan ($248 / Year) (FEATURED / POPULAR) */}
+            {/* PLAN 2: All-In-One Solution ($1,800 / Year) (FEATURED) */}
             <div className="bg-white rounded-2xl border-2 border-[#B5111B] p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-lg relative overflow-hidden ring-4 ring-[#B5111B]/10">
               <div className="absolute top-0 right-0 bg-[#B5111B] text-white text-[10px] font-black uppercase tracking-wider py-1 px-3.5 rounded-bl-xl shadow-xs">
-                All-In-One Package
+                All-In-One Solution
               </div>
 
               <div className="space-y-5">
                 <div className="space-y-1.5">
                   <div className="text-xs font-black text-[#B5111B] uppercase tracking-wider">Complete Package</div>
-                  <h3 className="text-lg font-bold text-slate-900">Combined Subscription & Report Plan</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">Includes both Subscription (${subscriptionPrice}) + Report Generation (${reportPrice}).</p>
+                  <h3 className="text-xl font-bold text-slate-900">Total All-In-One Plan</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Includes Single Report Plan (${reportPrice}) + Platform Subscription (${subscriptionPrice}). Clients get updated reports as project data changes.
+                  </p>
+                </div>
+
+                {/* EXPLICIT CALCULATION BOX */}
+                <div className="p-3.5 bg-red-50/90 border border-red-200 rounded-xl space-y-1 text-xs">
+                  <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">
+                    Plan Calculation Formula
+                  </div>
+                  <div className="font-extrabold text-slate-900 text-xs sm:text-sm flex items-center justify-between flex-wrap gap-1">
+                    <span>$1,000 Report + $800 Subscription</span>
+                    <span className="text-[#B5111B] font-black text-sm sm:text-base">= $1,800 / Year</span>
+                  </div>
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 space-y-1.5">
                   <div className="text-4xl font-black text-[#B5111B]">
-                    ${bundlePrice}
+                    ${totalPlanPrice}
                     <span className="text-xs font-semibold text-slate-400"> /Year</span>
                   </div>
                   <span className="inline-block text-[11px] font-bold text-[#B5111B] bg-red-50 px-3 py-1 rounded-lg border border-red-200/80">
-                    ${subscriptionPrice} Subscription + ${reportPrice} Report
+                    $1,000 (Report Plan) + $800 (Subscription)
                   </span>
                 </div>
 
                 <ul className="space-y-3 pt-2 text-xs text-slate-700 font-medium">
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Full Annual Platform Access ($149 Value)</span>
+                    <span>Full Annual Platform Access ($800 Value)</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>Included Certified Report Plan ($99 Value)</span>
+                    <span>Single Certified Report Plan ($1,000 Value)</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>ACH Debit Preferred & Net 30/60 Invoicing</span>
+                    <span className="font-bold text-slate-900">Receive Continuous Updated Reports as Data Evolves</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                    <span>HubSpot & Stripe Billing Integration</span>
+                    <span>Unlimited Certified Scorecard Reports</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
+                    <span>Custom Section Maker & Schema Engine</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
@@ -2362,9 +2309,9 @@ export default function Home() {
 
               <Link
                 href="/login"
-                className="w-full bg-[#B5111B] hover:bg-[#8F0D15] text-white font-extrabold text-xs sm:text-sm py-3.5 rounded-xl shadow-md transition-all text-center block cursor-pointer"
+                className="w-full bg-[#B5111B] hover:bg-[#8F0D15] text-white font-extrabold text-xs sm:text-sm py-3.5 rounded-xl shadow-md transition-all text-center block cursor-pointer mt-4"
               >
-                Buy Combined Bundle (${bundlePrice}/yr)
+                Buy All-In-One Solution ($1,800/yr)
               </Link>
             </div>
 
