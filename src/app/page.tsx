@@ -42,7 +42,8 @@ import {
   Menu,
   Globe,
   User,
-  Mail
+  Mail,
+  Landmark
 } from "lucide-react"
 
 // --- HIGH-PRECISION SVG CHART COMPONENTS (LUXURY RED & GRAY MONOCHROME PALETTE) ---
@@ -102,107 +103,143 @@ function GaugeSpeedometerChart({ score = 6.4, max = 10, percentage = "64%" }: { 
   )
 }
 
-// 2. Section Analysis Radar Spider Chart (Red & Gray Theme)
-function RadarSectionChart() {
+// 2. Top Performing Modules Donut Chart (Green Shades)
+function TopPerformingModulesChart() {
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-5 sm:p-6 space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-5 sm:p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
       <div className="space-y-0.5 border-b border-slate-100 pb-3">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-md bg-red-50 text-[#B5111B] flex items-center justify-center">
-            <Layers className="w-3.5 h-3.5" />
+          <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <TrendingUp className="w-3.5 h-3.5" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-slate-900">Section Analysis</h3>
-            <p className="text-[10px] text-slate-400 font-medium">Performance Index per module</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex justify-center items-center py-1">
-        <svg viewBox="0 0 240 200" className="w-full max-w-[220px] h-40">
-          <polygon points="120,20 190,60 190,140 120,180 50,140 50,60" fill="none" stroke="#E2E8F0" strokeWidth="1" />
-          <polygon points="120,45 167,72 167,127 120,155 73,127 73,72" fill="none" stroke="#E2E8F0" strokeWidth="1" />
-          <polygon points="120,70 145,85 145,115 120,130 95,115 95,85" fill="none" stroke="#E2E8F0" strokeWidth="1" />
-          
-          <line x1="120" y1="100" x2="120" y2="20" stroke="#CBD5E1" strokeWidth="1" />
-          <line x1="120" y1="100" x2="190" y2="60" stroke="#CBD5E1" strokeWidth="1" />
-          <line x1="120" y1="100" x2="190" y2="140" stroke="#CBD5E1" strokeWidth="1" />
-          <line x1="120" y1="100" x2="120" y2="180" stroke="#CBD5E1" strokeWidth="1" />
-          <line x1="120" y1="100" x2="50" y2="140" stroke="#CBD5E1" strokeWidth="1" />
-          <line x1="120" y1="100" x2="50" y2="60" stroke="#CBD5E1" strokeWidth="1" />
-
-          <polygon 
-            points="120,35 178,75 160,132 120,165 65,125 70,70" 
-            fill="#B5111B" 
-            fillOpacity="0.18" 
-            stroke="#B5111B" 
-            strokeWidth="1.8" 
-          />
-
-          <text x="120" y="12" textAnchor="middle" className="text-[8.5px] fill-slate-600 font-semibold">Land Use</text>
-          <text x="196" y="60" textAnchor="start" className="text-[8.5px] fill-slate-600 font-semibold">Housing</text>
-          <text x="196" y="145" textAnchor="start" className="text-[8.5px] fill-slate-600 font-semibold">Wellness</text>
-          <text x="120" y="195" textAnchor="middle" className="text-[8.5px] fill-slate-600 font-semibold">Labor</text>
-          <text x="44" y="145" textAnchor="end" className="text-[8.5px] fill-slate-600 font-semibold">Safety</text>
-          <text x="44" y="60" textAnchor="end" className="text-[8.5px] fill-slate-600 font-semibold">Transit</text>
-        </svg>
-      </div>
-
-      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-        <span className="text-slate-500 font-medium">Radar Evaluation</span>
-        <span className="text-[#B5111B] font-bold">Multi-Axis Compliant</span>
-      </div>
-    </div>
-  )
-}
-
-// 3. Top Modules Donut Chart (Red & Gray Shades)
-function TopModulesChart() {
-  return (
-    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-5 sm:p-6 space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
-      <div className="space-y-0.5 border-b border-slate-100 pb-3">
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-md bg-red-50 text-[#B5111B] flex items-center justify-center">
-            <PieChart className="w-3.5 h-3.5" />
-          </div>
-          <div>
-            <h3 className="text-sm font-bold text-slate-900">Top Modules</h3>
+            <h3 className="text-sm font-bold text-slate-900">Top Performing Modules</h3>
             <p className="text-[10px] text-slate-400 font-medium">Highest scoring sections</p>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center items-center py-1">
-        <svg viewBox="0 0 200 200" className="w-40 h-40">
-          {/* Segment 1: Housing (Slate Gray) */}
-          <circle cx="100" cy="100" r="64" fill="none" stroke="#94A3B8" strokeWidth="32" strokeDasharray="65 337" strokeDashoffset="0" />
-          {/* Segment 2: Safety (Charcoal) */}
-          <circle cx="100" cy="100" r="64" fill="none" stroke="#334155" strokeWidth="32" strokeDasharray="75 327" strokeDashoffset="-70" />
-          {/* Segment 3: Labor (Deep Crimson) */}
-          <circle cx="100" cy="100" r="64" fill="none" stroke="#5C090E" strokeWidth="32" strokeDasharray="80 322" strokeDashoffset="-150" />
-          {/* Segment 4: Health (Red) */}
-          <circle cx="100" cy="100" r="64" fill="none" stroke="#8F0D15" strokeWidth="32" strokeDasharray="90 312" strokeDashoffset="-235" />
-          {/* Segment 5: Transit (Bright Crimson) */}
-          <circle cx="100" cy="100" r="64" fill="none" stroke="#B5111B" strokeWidth="32" strokeDasharray="85 317" strokeDashoffset="-330" />
+      <div className="flex justify-center items-center py-2">
+        <svg viewBox="0 0 280 220" className="w-full h-48 max-w-[260px]">
+          <defs>
+            <filter id="glowTop" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#14532D" floodOpacity="0.25" />
+            </filter>
+          </defs>
 
-          {/* Labels positioned cleanly on the donut slices */}
-          <text x="145" y="65" className="text-[7.5px] font-extrabold fill-slate-800" textAnchor="middle">01 Housing</text>
-          <text x="150" y="130" className="text-[7.5px] font-extrabold fill-white" textAnchor="middle">02 Safety</text>
-          <text x="100" y="166" className="text-[7.5px] font-extrabold fill-white" textAnchor="middle">03 Labor</text>
-          <text x="48" y="125" className="text-[7.5px] font-extrabold fill-white" textAnchor="middle">04 Health</text>
-          <text x="56" y="65" className="text-[7.5px] font-extrabold fill-white" textAnchor="middle">05 Transit</text>
+          {/* 5 Donut Slices */}
+          <g filter="url(#glowTop)">
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#14532D" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="0" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#15803D" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-68" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#16A34A" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-136" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#22C55E" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-204" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#4ADE80" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-272" />
+          </g>
+
+          {/* Center Callout */}
+          <text x="140" y="102" className="text-[9px] font-extrabold fill-slate-400 uppercase tracking-widest font-sans" textAnchor="middle">TOP 5</text>
+          <text x="140" y="122" className="text-xl font-black fill-emerald-600 font-sans" textAnchor="middle">8.0 avg</text>
+
+          {/* 5 Radial Leader Labels Fitted Around Graph */}
+          {/* 01 Housing (Top Right) */}
+          <circle cx="180" cy="65" r="3" fill="#14532D" />
+          <text x="188" y="68" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="start">01 Housing <tspan className="fill-emerald-700 font-black">(8.8)</tspan></text>
+
+          {/* 02 Safety (Middle Right) */}
+          <circle cx="202" cy="118" r="3" fill="#15803D" />
+          <text x="210" y="121" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="start">02 Safety <tspan className="fill-emerald-700 font-black">(8.4)</tspan></text>
+
+          {/* 03 Labor (Bottom Center) */}
+          <circle cx="152" cy="172" r="3" fill="#16A34A" />
+          <text x="152" y="186" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="middle">03 Labor <tspan className="fill-emerald-700 font-black">(7.9)</tspan></text>
+
+          {/* 04 Health (Middle Left) */}
+          <circle cx="78" cy="128" r="3" fill="#22C55E" />
+          <text x="70" y="131" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="end">04 Health <tspan className="fill-emerald-700 font-black">(7.6)</tspan></text>
+
+          {/* 05 Transit (Top Left) */}
+          <circle cx="92" cy="65" r="3" fill="#4ADE80" />
+          <text x="84" y="68" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="end">05 Transit <tspan className="fill-emerald-700 font-black">(7.2)</tspan></text>
         </svg>
       </div>
 
       <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-        <span className="text-slate-500 font-medium">Section Distribution</span>
-        <span className="text-[#B5111B] font-bold">5 Core Modules</span>
+        <span className="text-slate-500 font-medium">Top Performers</span>
+        <span className="text-emerald-600 font-bold">5 High Modules</span>
       </div>
     </div>
   )
 }
 
-// 4. Bar & Trend Line Combo Chart (Red & Gray Shades)
+// 3. Lowest Performing Modules Donut Chart (Red Shades)
+function LowestPerformingModulesChart() {
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-5 sm:p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
+      <div className="space-y-0.5 border-b border-slate-100 pb-3">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-md bg-red-50 text-red-600 flex items-center justify-center">
+            <PieChart className="w-3.5 h-3.5" />
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-slate-900">Lowest Performing Modules</h3>
+            <p className="text-[10px] text-slate-400 font-medium">Lowest scoring sections</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-center items-center py-2">
+        <svg viewBox="0 0 280 220" className="w-full h-48 max-w-[260px]">
+          <defs>
+            <filter id="glowLow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#7F1D1D" floodOpacity="0.25" />
+            </filter>
+          </defs>
+
+          {/* 5 Donut Slices */}
+          <g filter="url(#glowLow)">
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#7F1D1D" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="0" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#B91C1C" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-68" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#DC2626" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-136" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#EF4444" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-204" />
+            <circle cx="140" cy="110" r="54" fill="none" stroke="#F87171" strokeWidth="24" strokeDasharray="64 275" strokeDashoffset="-272" />
+          </g>
+
+          {/* Center Callout */}
+          <text x="140" y="102" className="text-[9px] font-extrabold fill-slate-400 uppercase tracking-widest font-sans" textAnchor="middle">LOW 5</text>
+          <text x="140" y="122" className="text-xl font-black fill-red-600 font-sans" textAnchor="middle">4.9 avg</text>
+
+          {/* 5 Radial Leader Labels Fitted Around Graph */}
+          {/* 01 Historic (Top Right) */}
+          <circle cx="180" cy="65" r="3" fill="#7F1D1D" />
+          <text x="188" y="68" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="start">01 Historic <tspan className="fill-red-600 font-black">(4.1)</tspan></text>
+
+          {/* 02 Culture (Middle Right) */}
+          <circle cx="202" cy="118" r="3" fill="#B91C1C" />
+          <text x="210" y="121" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="start">02 Culture <tspan className="fill-red-600 font-black">(4.5)</tspan></text>
+
+          {/* 03 Land Use (Bottom Center) */}
+          <circle cx="152" cy="172" r="3" fill="#DC2626" />
+          <text x="152" y="186" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="middle">03 Land Use <tspan className="fill-red-600 font-black">(4.9)</tspan></text>
+
+          {/* 04 Transport (Middle Left) */}
+          <circle cx="78" cy="128" r="3" fill="#EF4444" />
+          <text x="70" y="131" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="end">04 Transport <tspan className="fill-red-600 font-black">(5.2)</tspan></text>
+
+          {/* 05 Infra (Top Left) */}
+          <circle cx="92" cy="65" r="3" fill="#F87171" />
+          <text x="84" y="68" className="text-[9px] font-extrabold fill-slate-800 font-sans" textAnchor="end">05 Infra <tspan className="fill-red-600 font-black">(5.6)</tspan></text>
+        </svg>
+      </div>
+
+      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+        <span className="text-slate-500 font-medium">Lowest Performers</span>
+        <span className="text-red-600 font-bold">5 Low Modules</span>
+      </div>
+    </div>
+  )
+}
+
+// 4. Value Overview Donut Chart (Red & Gray Shades)
 function ComboBarLineChart() {
   return (
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 space-y-4 hover:shadow-md transition-shadow">
@@ -211,120 +248,56 @@ function ComboBarLineChart() {
         <p className="text-[10px] text-slate-400 font-mono">Regional infrastructure evaluation</p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 text-[10px] text-slate-600 font-bold">
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#B5111B]" /> Client Total Score</span>
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-slate-400" /> Regional Baseline</span>
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-slate-900" /> Overall Trend</span>
+      <div className="flex justify-center items-center py-2">
+        <svg viewBox="0 0 200 200" className="w-44 h-44">
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#6D0A10" strokeWidth="32" strokeDasharray="70 332" strokeDashoffset="0" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#B5111B" strokeWidth="32" strokeDasharray="85 317" strokeDashoffset="-75" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#C44149" strokeWidth="32" strokeDasharray="75 327" strokeDashoffset="-165" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#888585" strokeWidth="32" strokeDasharray="80 322" strokeDashoffset="-245" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#222121" strokeWidth="32" strokeDasharray="70 332" strokeDashoffset="-330" />
+
+          <text x="100" y="92" className="text-[9px] font-bold fill-slate-400 uppercase tracking-wider font-sans" textAnchor="middle">TOTAL</text>
+          <text x="100" y="112" className="text-xl font-black fill-slate-900 font-sans" textAnchor="middle">18.4</text>
+        </svg>
       </div>
 
-      <div className="pt-2">
-        <svg viewBox="0 0 400 160" className="w-full h-44">
-          <line x1="30" y1="20" x2="390" y2="20" stroke="#F1F5F9" strokeWidth="1" />
-          <line x1="30" y1="60" x2="390" y2="60" stroke="#F1F5F9" strokeWidth="1" />
-          <line x1="30" y1="100" x2="390" y2="100" stroke="#F1F5F9" strokeWidth="1" />
-          <line x1="30" y1="140" x2="390" y2="140" stroke="#E2E8F0" strokeWidth="1" />
-
-          <text x="20" y="24" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">80</text>
-          <text x="20" y="64" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">45</text>
-          <text x="20" y="104" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">15</text>
-          <text x="20" y="144" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">0</text>
-
-          <rect x="50" y="110" width="12" height="30" fill="#B5111B" rx="2" />
-          <rect x="65" y="125" width="12" height="15" fill="#CBD5E1" rx="2" />
-
-          <rect x="110" y="128" width="12" height="12" fill="#B5111B" rx="2" />
-          <rect x="125" y="120" width="12" height="20" fill="#94A3B8" rx="2" />
-
-          <rect x="170" y="130" width="12" height="10" fill="#B5111B" rx="2" />
-          <rect x="185" y="125" width="12" height="15" fill="#CBD5E1" rx="2" />
-
-          <rect x="230" y="80" width="12" height="60" fill="#B5111B" rx="2" />
-          <rect x="245" y="115" width="12" height="25" fill="#94A3B8" rx="2" />
-
-          <rect x="290" y="70" width="12" height="70" fill="#64748B" rx="2" />
-          <rect x="305" y="130" width="12" height="10" fill="#B5111B" rx="2" />
-
-          <rect x="350" y="125" width="12" height="15" fill="#B5111B" rx="2" />
-
-          <path
-            d="M 56,100 C 100,125 150,130 236,45 C 270,20 310,120 356,120"
-            fill="none"
-            stroke="#1E293B"
-            strokeWidth="2.5"
-          />
-          <circle cx="56" cy="100" r="4" fill="#1E293B" />
-          <circle cx="116" cy="122" r="4" fill="#1E293B" />
-          <circle cx="176" cy="128" r="4" fill="#1E293B" />
-          <circle cx="236" cy="45" r="5" fill="#B5111B" />
-          <circle cx="296" cy="120" r="4" fill="#1E293B" />
-          <circle cx="356" cy="120" r="4" fill="#1E293B" />
-
-          <text x="56" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Major Routes</text>
-          <text x="116" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">HH w/o Vehicle</text>
-          <text x="176" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Avg Commute</text>
-          <text x="236" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Transit Options</text>
-          <text x="296" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">STIP Projects</text>
-          <text x="356" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Ped Plan</text>
-        </svg>
+      <div className="pt-3 border-t border-slate-100 flex flex-wrap justify-center gap-1.5 text-xs">
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">Major Routes 22% (4.1)</span>
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">HH w/o Vehicle 26% (4.8)</span>
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">Avg Commute 23% (4.2)</span>
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">Transit 29% (5.3)</span>
       </div>
     </div>
   )
 }
 
-// 5. Multi-Curve Layered Wave Area Chart (Crimson & Slate Shades)
+// 5. Score Breakdown Donut Chart (Crimson & Slate Shades)
 function MultiCurveAreaChart() {
   return (
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 space-y-4 hover:shadow-md transition-shadow">
       <div className="space-y-0.5 border-b border-slate-100 pb-3">
         <h3 className="text-sm font-bold text-slate-900">Accessibility & Transportation Score Breakdown</h3>
-        <p className="text-[10px] text-slate-400 font-mono">Multi-year comparative variance</p>
+        <p className="text-[10px] text-slate-400 font-mono">Multi-indicator score distribution</p>
       </div>
 
-      <div className="pt-2">
-        <svg viewBox="0 0 400 160" className="w-full h-44">
-          <defs>
-            <linearGradient id="areaRed1Main" x1="0%" y1="0%" x2="0%" y2="1">
-              <stop offset="0%" stopColor="#B5111B" stopOpacity="0.55" />
-              <stop offset="100%" stopColor="#B5111B" stopOpacity="0.04" />
-            </linearGradient>
-            <linearGradient id="areaSlate2Main" x1="0%" y1="0%" x2="0%" y2="1">
-              <stop offset="0%" stopColor="#475569" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#475569" stopOpacity="0.04" />
-            </linearGradient>
-          </defs>
+      <div className="flex justify-center items-center py-2">
+        <svg viewBox="0 0 200 200" className="w-44 h-44">
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#B5111B" strokeWidth="32" strokeDasharray="95 307" strokeDashoffset="0" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#D37076" strokeWidth="32" strokeDasharray="75 327" strokeDashoffset="-100" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#CCCACA" strokeWidth="32" strokeDasharray="65 337" strokeDashoffset="-180" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#444242" strokeWidth="32" strokeDasharray="80 322" strokeDashoffset="-250" />
+          <circle cx="100" cy="100" r="64" fill="none" stroke="#6D0A10" strokeWidth="32" strokeDasharray="70 332" strokeDashoffset="-335" />
 
-          <line x1="30" y1="20" x2="390" y2="20" stroke="#F1F5F9" strokeWidth="1" />
-          <line x1="30" y1="60" x2="390" y2="60" stroke="#F1F5F9" strokeWidth="1" />
-          <line x1="30" y1="100" x2="390" y2="100" stroke="#F1F5F9" strokeWidth="1" />
-          <line x1="30" y1="140" x2="390" y2="140" stroke="#E2E8F0" strokeWidth="1" />
-
-          <text x="20" y="24" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">80</text>
-          <text x="20" y="64" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">45</text>
-          <text x="20" y="104" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">15</text>
-          <text x="20" y="144" className="text-[9px] fill-slate-400 font-mono" textAnchor="end">0</text>
-
-          <path
-            d="M 30,120 C 100,135 180,140 250,50 C 300,20 350,130 390,135 L 390,140 L 30,140 Z"
-            fill="url(#areaRed1Main)"
-            stroke="#B5111B"
-            strokeWidth="2"
-          />
-
-          <path
-            d="M 30,110 C 110,120 190,125 250,75 C 290,45 350,125 390,130 L 390,140 L 30,140 Z"
-            fill="url(#areaSlate2Main)"
-            stroke="#475569"
-            strokeWidth="1.5"
-            strokeDasharray="4 2"
-          />
-
-          <text x="56" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Major Routes</text>
-          <text x="116" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">HH w/o Vehicle</text>
-          <text x="176" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Avg Commute</text>
-          <text x="236" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Transit Options</text>
-          <text x="296" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">STIP Projects</text>
-          <text x="356" y="155" className="text-[8px] fill-slate-500 font-semibold" textAnchor="middle">Ped Plan</text>
+          <text x="100" y="92" className="text-[9px] font-bold fill-slate-400 uppercase tracking-wider font-sans" textAnchor="middle">TOTAL</text>
+          <text x="100" y="112" className="text-xl font-black fill-slate-900 font-sans" textAnchor="middle">24.2</text>
         </svg>
+      </div>
+
+      <div className="pt-3 border-t border-slate-100 flex flex-wrap justify-center gap-1.5 text-xs">
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">STIP Projects 31% (7.5)</span>
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">Bike/Ped Plan 24% (5.8)</span>
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">Safety Score 21% (5.1)</span>
+        <span className="bg-slate-100 border border-slate-200/80 px-2 py-0.5 rounded-md text-[10px] font-semibold text-slate-700">Pavement 24% (5.8)</span>
       </div>
     </div>
   )
@@ -1635,11 +1608,11 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right 3 Executive Chart Cards (Overall Score, Section Analysis Radar, Top Modules Rose Wheel) */}
+            {/* Right 3 Executive Chart Cards (Overall Score, Top Performing Modules, Lowest Performing Modules) */}
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-5 items-stretch">
               <GaugeSpeedometerChart score={6.4} max={10} percentage="64%" />
-              <RadarSectionChart />
-              <TopModulesChart />
+              <TopPerformingModulesChart />
+              <LowestPerformingModulesChart />
             </div>
 
           </div>
@@ -2254,7 +2227,7 @@ export default function Home() {
           </div>
 
           {/* 2 Real Plans Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-2 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-2 w-full">
             
             {/* PLAN 1: Single Report Plan ($1,000 / Report) */}
             <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-2xs hover:shadow-md transition-shadow">
