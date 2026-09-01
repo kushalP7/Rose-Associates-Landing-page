@@ -153,9 +153,9 @@ export function PricingSection() {
                 <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">
                   Plan Calculation Formula
                 </div>
-                <div className="font-extrabold text-slate-900 text-xs sm:text-sm flex items-center justify-between flex-wrap gap-1">
+                <div className="font-extrabold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 flex-wrap">
                   <span>$1,000 Report + $800 Subscription</span>
-                  <span className="text-[#B5111B] font-black text-sm sm:text-base">= $1,800 / Year</span>
+                  <span className="text-[#B5111B] font-black text-xs sm:text-sm">= $1,800 / Year</span>
                 </div>
               </div>
 
