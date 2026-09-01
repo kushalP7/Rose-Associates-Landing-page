@@ -978,7 +978,7 @@ export default function OrdersPage() {
           </div>
         </div>
 
-        <div className="overflow-x-auto scrollbar-none w-full">
+        <div className="overflow-x-auto scrollbar-none w-full min-h-[360px]">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50/90 border-b border-slate-200 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
@@ -1009,7 +1009,7 @@ export default function OrdersPage() {
                   const isFull = order.paymentStatus === 'full';
                   const remainingBalance = order.totalAmount - order.paidAmount;
                   const currentStepObj = TIMELINE_STEPS.find(s => s.id === order.timelineStep) || TIMELINE_STEPS[0];
-                  const isLowerRow = orderIndex >= 2;
+                  const isLowerRow = paginatedOrders.length >= 4 && orderIndex >= paginatedOrders.length - 2 && orderIndex > 1;
                   const isAllDone = order.timelineStep === 6;
 
                   return (

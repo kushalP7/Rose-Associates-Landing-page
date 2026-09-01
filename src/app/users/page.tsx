@@ -808,7 +808,7 @@ export default function UsersPage() {
         </div>
 
         {/* Users Table */}
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto min-h-[360px]">
           <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
               <tr className="bg-slate-50/80 border-b border-slate-200 text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">
@@ -829,7 +829,7 @@ export default function UsersPage() {
                 </tr>
               ) : (
                 paginatedUsers.map((user, index) => {
-                  const isLowerRow = index >= Math.max(0, paginatedUsers.length - 2);
+                  const isLowerRow = paginatedUsers.length >= 4 && index >= paginatedUsers.length - 2 && index > 1;
 
                   return (
                     <tr

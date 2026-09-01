@@ -34,11 +34,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     initialize()
   }, [initialize])
 
+  const PUBLIC_ROUTES = ["/", "/login", "/about", "/pricing", "/process", "/framework", "/glossary", "/categories", "/executive-analytics", "/services", "/videos", "/report-showcase"]
+  const isPublicPage = PUBLIC_ROUTES.includes(pathname)
+
   React.useEffect(() => {
-    if (mounted && !isAuthenticated && pathname !== "/" && pathname !== "/login") {
+    if (mounted && !isAuthenticated && !isPublicPage) {
       router.push("/login")
     }
-  }, [mounted, isAuthenticated, pathname, router])
+  }, [mounted, isAuthenticated, isPublicPage, router])
 
   // Automatically close mobile sidebar on route change
   React.useEffect(() => {
@@ -46,12 +49,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }, [pathname])
 
   // If on public pages (/ or /login), render children standalone without admin sidebar/header
-  if (pathname === "/" || pathname === "/login") {
+  if (isPublicPage) {
     return <>{children}</>
   }
 
   // Prevent flash of protected content before mounting auth check
-  if (!mounted || (!isAuthenticated && pathname !== "/" && pathname !== "/login")) {
+  if (!mounted || (!isAuthenticated && !isPublicPage)) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-[#B5111B] border-t-transparent rounded-full animate-spin" />
