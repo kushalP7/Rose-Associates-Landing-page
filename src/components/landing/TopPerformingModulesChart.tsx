@@ -8,8 +8,8 @@ export function TopPerformingModulesChart() {
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-4 sm:p-5 flex flex-col justify-between hover:shadow-md transition-shadow">
       <div className="space-y-0.5 border-b border-slate-100 pb-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-            <TrendingUp className="w-4 h-4" />
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-teal-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+            <TrendingUp className="w-4.5 h-4.5 text-white" />
           </div>
           <div>
             <h3 className="text-base font-bold text-slate-900">Top Performing Modules</h3>

@@ -56,9 +56,6 @@ export function AboutUsSection() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-extrabold uppercase tracking-widest text-[#B5111B]">
-                  OUR INSPIRATION & HERITAGE
-                </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug">
                   From Buckminster Fuller’s Dome to a 30-Year Advisory Legacy
                 </h2>
@@ -97,18 +94,28 @@ export function AboutUsSection() {
             <div className="lg:col-span-5">
               <div className="bg-gradient-to-br from-slate-900 via-[#3B070B] to-slate-950 text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative space-y-6 border border-red-950/80">
                 
-                <div className="w-12 h-12 rounded-2xl bg-red-600/30 border border-red-500/40 text-white flex items-center justify-center shadow-inner">
-                  <Compass className="w-6 h-6 text-white" />
+                {/* Quote Section - Clean Flex Column Alignment */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#B5111B] to-[#E11D48] text-white flex items-center justify-center shadow-md shrink-0">
+                    <Compass className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+
+                  <blockquote className="italic text-sm sm:text-[15px] text-slate-100 leading-relaxed font-serif pt-1 flex-1">
+                    &ldquo;A structure or community must never exist in isolation. True prosperity happens when land use, market realities, and human well-being align in seamless harmony.&rdquo;
+                  </blockquote>
                 </div>
 
-                <blockquote className="space-y-4 italic text-sm text-slate-200 leading-relaxed font-serif">
-                  &ldquo;A structure or community must never exist in isolation. True prosperity happens when land use, market realities, and human well-being align in seamless harmony.&rdquo;
-                </blockquote>
-
-                <div className="pt-4 border-t border-red-900/50 space-y-1">
-                  <div className="text-base font-extrabold text-white">Kathleen Rose, CCIM, CRE</div>
-                  <div className="text-xs text-rose-200/80 font-medium">Founder, President & CEO • Rose Associates</div>
-                  <div className="text-[11px] text-slate-400 font-mono pt-1">Davidson, North Carolina</div>
+                <div className="pt-5 border-t border-red-900/50 flex items-center gap-4">
+                  <img
+                    src="/kathleen_rose.png"
+                    alt="Kathleen Rose, CCIM, CRE"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-red-500/40 shadow-md shrink-0"
+                  />
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="text-base font-extrabold text-white truncate">Kathleen Rose, CCIM, CRE</div>
+                    <div className="text-xs text-rose-200/90 font-medium truncate">Founder, President & CEO • Rose Associates</div>
+                    <div className="text-[11px] text-slate-400 font-mono pt-0.5">Davidson, North Carolina</div>
+                  </div>
                 </div>
 
               </div>
@@ -139,8 +146,8 @@ export function AboutUsSection() {
             
             {/* Pillar 1 */}
             <div className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-2xs space-y-4 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0 group-hover:bg-[#B5111B] group-hover:text-white transition-colors">
-                <TrendingUp className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B5111B] to-[#E11D48] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-all">
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-black text-slate-900 tracking-tight">
                 Developing Prosperity
@@ -152,8 +159,8 @@ export function AboutUsSection() {
 
             {/* Pillar 2 */}
             <div className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-2xs space-y-4 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0 group-hover:bg-[#B5111B] group-hover:text-white transition-colors">
-                <ShieldCheck className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B5111B] to-[#E11D48] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-all">
+                <ShieldCheck className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-black text-slate-900 tracking-tight">
                 Building Quality of Life
@@ -165,8 +172,8 @@ export function AboutUsSection() {
 
             {/* Pillar 3 */}
             <div className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-2xs space-y-4 hover:shadow-lg transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0 group-hover:bg-[#B5111B] group-hover:text-white transition-colors">
-                <Building2 className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B5111B] to-[#E11D48] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-all">
+                <Building2 className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-black text-slate-900 tracking-tight">
                 Curating Built Balance

@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 import { ShieldCheck, MapPin } from "lucide-react"
 import { CommunityWedgeWheel } from "./CommunityWedgeWheel"
 
@@ -49,16 +48,6 @@ export function HeroSection() {
             <p className="text-xs sm:text-sm lg:text-xs xl:text-sm 2xl:text-base text-rose-100/90 leading-relaxed font-normal max-w-xl">
               Rose Associates is a real estate and economic development advisory firm providing comprehensive services for private, institutional and municipal clients. Our 30+ years of experience in both urban and rural communities throughout the Carolinas and Southeast will guide you on a path toward prosperity. <strong className="text-[#E11D48] font-bold">Problem. Solved.</strong>
             </p>
-
-            {/* Action CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-1 lg:pt-1.5">
-              <Link
-                href="/#services"
-                className="bg-[#B5111B] hover:bg-[#8F0D15] text-white px-5 py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl flex items-center transition-all hover:scale-105"
-              >
-                <span>Explore Advisory Services</span>
-              </Link>
-            </div>
 
             {/* Divider Line */}
             <div className="w-full border-t border-red-900/60 pt-3 lg:pt-3" />

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight, ShieldCheck, Layers, Activity, Sparkles, FileDown, FileText, ExternalLink, Download, X } from "lucide-react"
+import { ChevronLeft, ChevronRight, ShieldCheck, Layers, Activity, Sparkles, FileText, ExternalLink, Download, X } from "lucide-react"
 
 export function ReportShowcaseSection() {
   const [activeFannedPage, setActiveFannedPage] = React.useState<number>(2)
@@ -765,7 +765,7 @@ export function ReportShowcaseSection() {
             href="/login"
             className="bg-[#B5111B] hover:bg-[#8F0D15] text-white font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-md transition-all inline-flex items-center gap-2 cursor-pointer hover:scale-102"
           >
-            <FileDown className="w-4 h-4 text-white" />
+            <Download className="w-4 h-4 text-white" />
             <span>Buy Subscription to Generate Certified Reports</span>
           </Link>
         </div>

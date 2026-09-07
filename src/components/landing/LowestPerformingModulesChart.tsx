@@ -1,15 +1,15 @@
 "use client"
 
 import * as React from "react"
-import { PieChart } from "lucide-react"
+import { TrendingDown } from "lucide-react"
 
 export function LowestPerformingModulesChart() {
   return (
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-4 sm:p-5 flex flex-col justify-between hover:shadow-md transition-shadow">
       <div className="space-y-0.5 border-b border-slate-100 pb-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
-            <PieChart className="w-4 h-4" />
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#B5111B] to-[#E11D48] text-white flex items-center justify-center shrink-0 shadow-xs">
+            <TrendingDown className="w-4.5 h-4.5 text-white" />
           </div>
           <div>
             <h3 className="text-base font-bold text-slate-900">Lowest Performing Modules</h3>
