@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rose Associates — Prosperity Builder Scorecard",
+  title: "Rose Associates - Prosperity Builder Scorecard",
   description: "Strategic Real Estate & Economic Development Decision Platform by Rose Associates",
   icons: {
     icon: "/icon.png",
