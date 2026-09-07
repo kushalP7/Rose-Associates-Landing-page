@@ -7,24 +7,24 @@ import { CommunityWedgeWheel } from "./CommunityWedgeWheel"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-[#540208] text-white overflow-hidden border-b border-red-950 flex items-center min-h-0 lg:min-h-[620px] xl:min-h-[700px] 2xl:min-h-[820px]">
+    <section className="relative bg-[#540208] text-white overflow-hidden border-b border-red-950 flex items-center min-h-0 lg:min-h-[620px] xl:min-h-[680px]">
       {/* Ambient Gradient Lighting & Mesh Accent */}
       <div className="absolute inset-0 bg-radial-[ellipse_at_center,_var(--tw-gradient-stops)] from-[#6A040E]/80 via-[#540208] to-[#3B0105] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40" />
 
       {/* Desktop Flush Right Wedge Wheel Graphic */}
-      <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-0 lg:right-2 xl:right-6 2xl:right-10 w-[45vw] xl:w-[47vw] 2xl:w-[49vw] max-w-[500px] xl:max-w-[640px] 2xl:max-w-[780px] pointer-events-none z-10 select-none items-center justify-end pr-2 lg:pr-4 py-2">
+      <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-0 xl:right-4 2xl:right-12 w-[42vw] xl:w-[45vw] max-w-[500px] xl:max-w-[620px] 2xl:max-w-[700px] pointer-events-none z-10 select-none items-center justify-end pr-2 lg:pr-4 py-2">
         <div className="w-full pointer-events-auto">
           <CommunityWedgeWheel />
         </div>
       </div>
 
-      {/* Content Container */}
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 py-6 sm:py-8 lg:py-8 xl:py-10 2xl:py-16 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+      {/* Content Container - Perfect alignment with LandingHeader (max-w-7xl px-4 sm:px-6 lg:px-8) */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 xl:py-16 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Content Column */}
-          <div className="lg:col-span-8 xl:col-span-7 2xl:col-span-7 space-y-3.5 sm:space-y-4 lg:space-y-3.5 xl:space-y-4.5 2xl:space-y-6 z-10 max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
+          <div className="lg:col-span-7 xl:col-span-7 space-y-4 lg:space-y-5 z-10 max-w-xl lg:max-w-2xl">
             
             {/* Header Badge */}
             <div className="inline-flex items-center gap-2.5 p-1 pr-4 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/15 text-white shadow-xl shadow-black/20 hover:border-white/25 transition-all">
@@ -37,14 +37,14 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[44px] 2xl:text-[56px] font-black text-white tracking-tight leading-[1.08]">
+            <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[44px] 2xl:text-[50px] font-black text-white tracking-tight leading-[1.08]">
               Strategic Advisory<br />
               at the Intersection of<br />
               Economic Development<br />
               & Real Estate<span className="text-[#E11D48]">.</span>
             </h1>
 
-            <p className="text-xs sm:text-sm lg:text-xs xl:text-sm 2xl:text-base text-rose-100/90 leading-relaxed font-normal max-w-xl xl:max-w-2xl 2xl:max-w-3xl">
+            <p className="text-xs sm:text-sm lg:text-xs xl:text-sm 2xl:text-base text-rose-100/90 leading-relaxed font-normal max-w-xl">
               Rose Associates is a real estate and economic development advisory firm providing comprehensive services for private, institutional and municipal clients. Our 30+ years of experience in both urban and rural communities throughout the Carolinas and Southeast will guide you on a path toward prosperity. <strong className="text-[#E11D48] font-bold">Problem. Solved.</strong>
             </p>
 
@@ -62,8 +62,8 @@ export function HeroSection() {
             <div className="w-full border-t border-red-900/60 pt-3 lg:pt-3" />
 
             {/* Bottom Stat Callout Text */}
-            <div className="space-y-1 lg:space-y-1 max-w-xl xl:max-w-2xl">
-              <h3 className="text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-xl font-black text-white tracking-tight leading-snug">
+            <div className="space-y-1 lg:space-y-1 max-w-xl">
+              <h3 className="text-sm sm:text-base lg:text-sm xl:text-base 2xl:text-lg font-black text-white tracking-tight leading-snug">
                 90+ Data Points Simplified into the Insights That Matter<span className="text-[#E11D48]">.</span>
               </h3>
               <p className="text-[11px] sm:text-xs lg:text-[11px] xl:text-xs 2xl:text-sm text-rose-200/90 font-normal leading-normal">
@@ -72,8 +72,16 @@ export function HeroSection() {
             </div>
           </div>
 
+          {/* Mobile/Tablet Graphic */}
+          <div className="lg:hidden flex justify-center pt-4">
+            <div className="w-full max-w-[340px] sm:max-w-[420px]">
+              <CommunityWedgeWheel />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   )
 }
+
