@@ -5,7 +5,7 @@ import { Layers, TrendingUp, Building2, Check, ArrowRight, ShieldCheck, Database
 
 export function AdvisoryServicesSection() {
   return (
-    <section id="advisory-services" className="scroll-mt-20 py-10 sm:py-14 bg-slate-50/50 relative overflow-hidden">
+    <section id="services" className="scroll-mt-20 py-10 sm:py-14 bg-slate-50/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Header */}

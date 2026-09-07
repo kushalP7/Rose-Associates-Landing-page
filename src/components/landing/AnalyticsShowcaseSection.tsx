@@ -13,26 +13,24 @@ export function AnalyticsShowcaseSection() {
     <section id="analytics-showcase" className="scroll-mt-20 py-12 sm:py-16 bg-gradient-to-b from-white via-slate-50/60 to-white text-slate-900 border-b border-slate-200/90 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
-        {/* Top Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          <div className="lg:col-span-4 space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.12]">
-              Executive Analytics & <br />
-              <span className="text-[#B5111B]">Scorecard Insights</span>
-            </h2>
+        {/* Centered Top Header */}
+        <div className="text-center max-w-5xl mx-auto space-y-3">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-[#B5111B]">
+            EXECUTIVE DASHBOARD & METRICS
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-slate-900 tracking-tight leading-tight whitespace-nowrap">
+            Executive Analytics & <span className="text-[#B5111B]">Scorecard Insights</span>
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            Real-time score speedometers, radar analysis, module insights, and trend visualizations - all in one place.
+          </p>
+        </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-              Real-time score speedometers, radar analysis, module insights, and trend visualizations — all in one place.
-            </p>
-          </div>
-
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-5 items-stretch">
-            <GaugeSpeedometerChart score={6.4} max={10} percentage="64%" />
-            <TopPerformingModulesChart />
-            <LowestPerformingModulesChart />
-          </div>
-
+        {/* 3 Summary Charts Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          <GaugeSpeedometerChart score={6.4} max={10} percentage="64%" />
+          <TopPerformingModulesChart />
+          <LowestPerformingModulesChart />
         </div>
 
         {/* Middle Row */}

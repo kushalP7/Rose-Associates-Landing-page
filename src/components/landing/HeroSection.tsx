@@ -2,18 +2,18 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { ArrowRight, ShieldCheck } from "lucide-react"
+import { ShieldCheck } from "lucide-react"
 import { CommunityWedgeWheel } from "./CommunityWedgeWheel"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-[#540208] text-white overflow-hidden border-b border-red-950 flex items-center min-h-0 lg:min-h-[540px] xl:min-h-[620px] 2xl:min-h-[720px]">
+    <section className="relative bg-[#540208] text-white overflow-hidden border-b border-red-950 flex items-center min-h-0 lg:min-h-[620px] xl:min-h-[700px] 2xl:min-h-[820px]">
       {/* Ambient Gradient Lighting & Mesh Accent */}
       <div className="absolute inset-0 bg-radial-[ellipse_at_center,_var(--tw-gradient-stops)] from-[#6A040E]/80 via-[#540208] to-[#3B0105] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40" />
 
       {/* Desktop Flush Right Wedge Wheel Graphic */}
-      <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-0 lg:right-2 xl:right-6 2xl:right-10 w-[44vw] xl:w-[46vw] 2xl:w-[48vw] max-w-[480px] xl:max-w-[620px] 2xl:max-w-[780px] pointer-events-none z-10 select-none items-center justify-end pr-2 lg:pr-4">
+      <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 right-0 lg:right-2 xl:right-6 2xl:right-10 w-[45vw] xl:w-[47vw] 2xl:w-[49vw] max-w-[500px] xl:max-w-[640px] 2xl:max-w-[780px] pointer-events-none z-10 select-none items-center justify-end pr-2 lg:pr-4 py-2">
         <div className="w-full pointer-events-auto">
           <CommunityWedgeWheel />
         </div>
@@ -27,9 +27,14 @@ export function HeroSection() {
           <div className="lg:col-span-8 xl:col-span-7 2xl:col-span-7 space-y-3.5 sm:space-y-4 lg:space-y-3.5 xl:space-y-4.5 2xl:space-y-6 z-10 max-w-2xl xl:max-w-3xl 2xl:max-w-4xl">
             
             {/* Header Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-950/80 border border-white/80 text-white text-[11px] lg:text-xs font-extrabold uppercase tracking-widest shadow-inner">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#E11D48]" />
-              <span>ESTABLISHED 1992 • DAVIDSON, NORTH CAROLINA</span>
+            <div className="inline-flex items-center gap-2.5 p-1 pr-4 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/15 text-white shadow-xl shadow-black/20 hover:border-white/25 transition-all">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#B5111B] to-[#E11D48] text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider shadow-xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-white" />
+                <span>ESTABLISHED 1992</span>
+              </span>
+              <span className="text-rose-100/90 font-bold tracking-wider uppercase text-[10px] sm:text-[11px] pr-1">
+                Davidson, North Carolina
+              </span>
             </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[44px] 2xl:text-[56px] font-black text-white tracking-tight leading-[1.08]">
@@ -46,17 +51,10 @@ export function HeroSection() {
             {/* Action CTA Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-1 lg:pt-1.5">
               <Link
-                href="/services"
-                className="bg-[#B5111B] hover:bg-[#8F0D15] text-white px-5 py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl flex items-center gap-2 transition-all hover:scale-105"
+                href="/#services"
+                className="bg-[#B5111B] hover:bg-[#8F0D15] text-white px-5 py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-xl font-black text-xs uppercase tracking-wider shadow-xl flex items-center transition-all hover:scale-105"
               >
                 <span>Explore Advisory Services</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <Link
-                href="/report-showcase"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-5 py-2.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-xl font-extrabold text-xs flex items-center gap-2 transition-all"
-              >
-                <span>View Sample Report</span>
               </Link>
             </div>
 

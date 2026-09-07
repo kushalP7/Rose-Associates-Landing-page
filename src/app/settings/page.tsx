@@ -485,30 +485,41 @@ export default function SettingsPage() {
                     </p>
                   </div>
 
-                  <div className="p-3 bg-red-50/90 border border-red-200 rounded-xl space-y-0.5 text-xs">
-                    <div className="text-[9px] font-extrabold text-[#B5111B] uppercase tracking-wider">
-                      Plan Calculation Formula
+                  <div className="p-3 bg-red-50/90 border border-red-200 rounded-xl space-y-1 text-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[9px] font-extrabold text-[#B5111B] uppercase tracking-wider">
+                        Plan Calculation Formula
+                      </span>
+                      <span className="text-[9px] font-extrabold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded-full">
+                        20% OFF
+                      </span>
                     </div>
                     <div className="font-extrabold text-slate-900 text-xs flex items-center gap-1.5 flex-wrap">
-                      <span>${reportPrice} Report + ${subscriptionPrice} Subscription</span>
-                      <span className="text-[#B5111B] font-black text-xs sm:text-sm">= ${reportPrice + subscriptionPrice} / Year</span>
+                      <span>$1,000 Report +</span>
+                      <span className="line-through text-slate-400 font-semibold">$1,000</span>
+                      <span className="text-emerald-700 font-bold">$800 Subscription</span>
+                      <span className="text-[#B5111B] font-black text-xs">= $1,800 / Year</span>
                     </div>
                   </div>
 
                   <div className="pt-1 border-t border-slate-100 space-y-1">
-                    <div className="text-3xl font-black text-[#B5111B]">
-                      ${reportPrice + subscriptionPrice}
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-3xl font-black text-[#B5111B]">$1,800</span>
                       <span className="text-xs font-semibold text-slate-400"> /Year</span>
+                      <span className="text-xs font-bold text-slate-400 line-through ml-1">$2,000</span>
+                      <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-200">Save 20%</span>
                     </div>
                     <span className="inline-block text-[10px] font-bold text-[#B5111B] bg-red-50 px-2.5 py-0.5 rounded-lg border border-red-200/80">
-                      ${reportPrice} (Report Plan) + ${subscriptionPrice} (Subscription)
+                      $1,000 (Report Plan) + $800 (Subscription)
                     </span>
                   </div>
 
                   <ul className="space-y-2 pt-1 text-xs text-slate-700 font-medium">
                     <li className="flex items-center gap-2">
                       <Check className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                      <span>Full Annual Platform Access (${subscriptionPrice} Value)</span>
+                      <span>
+                        Full Annual Platform Access <span className="line-through text-slate-400">$1,000</span> <span className="text-emerald-700 font-bold">($800 with 20% OFF)</span>
+                      </span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Check className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />

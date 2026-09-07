@@ -10,19 +10,32 @@ export function LandingHeader() {
   const pathname = usePathname()
 
   const navItems = [
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/#services" },
+    { name: "Report Showcase", href: "/#report-showcase" },
     { name: "Analytics", href: "/executive-analytics" },
     { name: "Categories", href: "/categories" },
-    { name: "Report Showcase", href: "/report-showcase" },
     { name: "About Us", href: "/about" },
     { name: "Pricing Plans", href: "/pricing" },
   ]
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      const targetId = href.replace("/#", "")
+      if (pathname === "/") {
+        e.preventDefault()
+        const el = document.getElementById(targetId)
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" })
+          window.history.pushState(null, "", href)
+        }
+      }
+    }
+  }
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/"
     if (href.startsWith("/#")) return false
     if (href === "/categories" && (pathname === "/categories" || pathname === "/framework" || pathname === "/process" || pathname === "/glossary")) return true
-    if (href === "/report-showcase" && (pathname === "/report-showcase" || pathname === "/videos")) return true
     return pathname === href
   }
 
@@ -47,6 +60,7 @@ export function LandingHeader() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className={`transition-colors whitespace-nowrap ${
                 isActive(item.href)
                   ? "text-[#B5111B] font-extrabold"
@@ -92,7 +106,10 @@ export function LandingHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, item.href)
+                  setMobileMenuOpen(false)
+                }}
                 className={`p-2.5 rounded-lg transition-colors ${
                   isActive(item.href)
                     ? "bg-red-50 text-[#B5111B] font-extrabold"

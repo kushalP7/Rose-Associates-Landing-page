@@ -4,7 +4,7 @@ import * as React from "react"
 import { ChevronRight, Check } from "lucide-react"
 
 export function ScorecardCategoriesSection() {
-  const [activeAccordionCat, setActiveAccordionCat] = React.useState<string | null>("accessibility")
+  const [activeRow, setActiveRow] = React.useState<number | null>(0)
 
   const categories = [
     {
@@ -199,6 +199,93 @@ export function ScorecardCategoriesSection() {
     }
   ]
 
+  // Group into pairs (6 rows of 2 categories)
+  const rows: (typeof categories[0])[][] = []
+  for (let i = 0; i < categories.length; i += 2) {
+    rows.push(categories.slice(i, i + 2))
+  }
+
+  const renderCategoryCard = (cat: typeof categories[0], rowIndex: number) => {
+    const isRowActive = activeRow === rowIndex
+
+    return (
+      <div 
+        key={cat.id}
+        className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-all overflow-hidden flex flex-col justify-between h-full"
+      >
+        <div className="flex flex-col h-full justify-between">
+          <div 
+            onClick={() => setActiveRow((prev) => (prev === rowIndex ? null : rowIndex))}
+            className="p-4 sm:p-5 flex items-center justify-between gap-3.5 cursor-pointer select-none group shrink-0"
+          >
+            <div className="flex items-center gap-3.5 min-w-0">
+              <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-2xs">
+                {cat.icon}
+              </div>
+              <div className="min-w-0">
+                <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 group-hover:text-[#B5111B] transition-colors truncate">
+                  {cat.title}
+                </h3>
+                <p className="text-[11px] text-slate-500 italic truncate max-w-sm">
+                  {cat.question}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 shrink-0">
+              <div className={`w-8 h-8 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:text-[#B5111B] group-hover:border-red-200 group-hover:bg-red-50 transition-all duration-300 ${
+                isRowActive ? "rotate-180 bg-red-50 text-[#B5111B] border-red-200" : ""
+              }`}>
+                <ChevronRight className="w-4 h-4 rotate-90" />
+              </div>
+            </div>
+          </div>
+
+          {/* Expanded Accordion Details */}
+          {isRowActive && (
+            <div className="px-5 pb-5 pt-1 space-y-4 border-t border-slate-100 bg-slate-50/50 flex-1 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="p-3 rounded-xl bg-white border border-slate-200/80 text-xs text-slate-900 italic font-semibold leading-relaxed shadow-2xs">
+                  "{cat.question}"
+                </div>
+
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  {cat.description}
+                </p>
+
+                {cat.quote && (
+                  <div className="border-l-2 border-[#B5111B] pl-3 py-0.5 space-y-0.5">
+                    <p className="text-[11px] text-slate-700 italic font-medium leading-snug">
+                      "{cat.quote}"
+                    </p>
+                    <span className="text-[10px] text-slate-400 font-bold block">
+                      — {cat.quoteAuthor}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              <div className="space-y-1.5 pt-2 mt-auto">
+                <div className="text-[10px] font-black text-slate-800 uppercase tracking-wider">
+                  Key Audit Indicators:
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                  {cat.metrics.map((m, i) => (
+                    <div key={i} className="text-[11px] text-slate-600 bg-white border border-slate-200/70 rounded-lg px-2.5 py-1 flex items-center gap-1.5 font-medium">
+                      <Check className="w-3 h-3 text-[#B5111B] shrink-0" />
+                      <span>{m}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          )}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <section id="scorecard-categories" className="scroll-mt-20 py-10 sm:py-14 bg-gradient-to-b from-rose-50/30 via-white to-slate-50 border-y border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -215,79 +302,11 @@ export function ScorecardCategoriesSection() {
           </p>
         </div>
 
-        {/* 12-Category 2-Column Interactive Accordion */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-start">
-          {categories.map((cat) => (
-            <div 
-              key={cat.id}
-              className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-all overflow-hidden"
-            >
-              <div 
-                onClick={() => setActiveAccordionCat((prev) => (prev === cat.id ? null : cat.id))}
-                className="p-4 sm:p-5 flex items-center justify-between gap-3.5 cursor-pointer select-none group"
-              >
-                <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-2xs">
-                    {cat.icon}
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 group-hover:text-[#B5111B] transition-colors truncate">
-                      {cat.title}
-                    </h3>
-                    <p className="text-[11px] text-slate-500 italic truncate max-w-sm">
-                      {cat.question}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 shrink-0">
-                  <div className={`w-8 h-8 rounded-full bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:text-[#B5111B] group-hover:border-red-200 group-hover:bg-red-50 transition-all duration-300 ${
-                    activeAccordionCat === cat.id ? "rotate-180 bg-red-50 text-[#B5111B] border-red-200" : ""
-                  }`}>
-                    <ChevronRight className="w-4 h-4 rotate-90" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Expanded Accordion Details */}
-              {activeAccordionCat === cat.id && (
-                <div className="px-5 pb-5 pt-1 space-y-4 border-t border-slate-100 bg-slate-50/50">
-                  
-                  <div className="p-3 rounded-xl bg-white border border-slate-200/80 text-xs text-slate-900 italic font-semibold leading-relaxed shadow-2xs">
-                    "{cat.question}"
-                  </div>
-
-                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                    {cat.description}
-                  </p>
-
-                  {cat.quote && (
-                    <div className="border-l-2 border-[#B5111B] pl-3 py-0.5 space-y-0.5">
-                      <p className="text-[11px] text-slate-700 italic font-medium leading-snug">
-                        "{cat.quote}"
-                      </p>
-                      <span className="text-[10px] text-slate-400 font-bold block">
-                        — {cat.quoteAuthor}
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="space-y-1.5 pt-1">
-                    <div className="text-[10px] font-black text-slate-800 uppercase tracking-wider">
-                      Key Audit Indicators:
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                      {cat.metrics.map((m, i) => (
-                        <div key={i} className="text-[11px] text-slate-600 bg-white border border-slate-200/70 rounded-lg px-2.5 py-1 flex items-center gap-1.5 font-medium">
-                          <Check className="w-3 h-3 text-[#B5111B] shrink-0" />
-                          <span>{m}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                </div>
-              )}
+        {/* 6 Rows of Paired 2-Column Accordions */}
+        <div className="space-y-4 sm:space-y-6">
+          {rows.map((rowItems, rowIndex) => (
+            <div key={rowIndex} className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-stretch">
+              {rowItems.map((cat) => renderCategoryCard(cat, rowIndex))}
             </div>
           ))}
         </div>

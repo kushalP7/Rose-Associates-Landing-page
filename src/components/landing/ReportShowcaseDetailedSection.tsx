@@ -11,13 +11,14 @@ import {
   Lock, 
   Building2, 
   Award,
-  ShieldCheck
+  ShieldCheck,
+  ExternalLink
 } from "lucide-react"
 import { ReportShowcaseSection } from "./ReportShowcaseSection"
 
 export function ReportShowcaseDetailedSection() {
   return (
-    <div className="bg-slate-50 text-slate-900 font-sans">
+    <div id="report-showcase" className="scroll-mt-20 bg-slate-50 text-slate-900 font-sans">
       
       {/* 1. HERO & 3D REPORT SHOWCASE PREVIEW */}
       <ReportShowcaseSection />
@@ -101,8 +102,22 @@ export function ReportShowcaseDetailedSection() {
             <blockquote className="text-base sm:text-lg font-bold text-slate-100 leading-relaxed max-w-3xl mx-auto italic font-serif">
               &ldquo;No gimmicks, no redundant reports, and no guesswork about where to get the most value for the money you spend.&rdquo;
             </blockquote>
-            <div className="text-xs text-rose-200/80 font-medium">
-              Kathleen Rose, CCIM, CRE • President & Founder, Rose Associates
+            <div className="flex items-center justify-center gap-3 pt-1">
+              <div className="w-10 h-10 rounded-full border-2 border-rose-500/50 overflow-hidden shrink-0 bg-slate-800 shadow-md">
+                <img
+                  src="/kathleen_rose.png"
+                  alt="Kathleen Rose"
+                  className="w-full h-full object-cover object-center"
+                  onError={(e) => {
+                    e.currentTarget.src = "/logo.png"
+                    e.currentTarget.className = "w-full h-full object-contain p-1 bg-white"
+                  }}
+                />
+              </div>
+              <div className="text-xs text-rose-200/90 font-medium text-left">
+                <span className="font-bold text-white">Kathleen Rose, CCIM, CRE</span>
+                <span className="opacity-80"> • President & Founder, Rose Associates</span>
+              </div>
             </div>
           </div>
 
@@ -155,19 +170,12 @@ export function ReportShowcaseDetailedSection() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex justify-center">
               <Link
                 href="/pricing"
-                className="bg-[#B5111B] hover:bg-[#8F0D15] text-white px-6 py-3 rounded-xl font-extrabold text-xs flex items-center gap-2 shadow-md transition-all"
+                className="bg-[#B5111B] hover:bg-[#8F0D15] text-white px-6 py-3 rounded-xl font-extrabold text-xs flex items-center gap-2 shadow-md transition-all hover:scale-102"
               >
                 <span>View Subscription Plans & Pricing</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/login"
-                className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 px-5 py-3 rounded-xl font-bold text-xs transition-colors"
-              >
-                <span>Client Portal Login</span>
               </Link>
             </div>
           </div>

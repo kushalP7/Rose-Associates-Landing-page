@@ -81,61 +81,90 @@ export function CommunityWedgeWheel() {
   const polygonPointsString = vertices.map((v) => `${v.x},${v.y}`).join(" ")
 
   return (
-    <div className="relative w-full aspect-square flex items-center justify-center">
+    <div className="relative w-full aspect-square flex items-center justify-center [perspective:1200px]">
+      {/* 3D Projected Floor Shadow */}
+      <div className="absolute -bottom-8 right-6 w-[85%] h-[28%] bg-black/80 blur-3xl rounded-full transform -rotate-12 scale-y-50 pointer-events-none z-0" />
+      
       {/* Ambient Red Glow */}
-      <div className="absolute inset-0 rounded-full bg-radial from-red-500/30 via-transparent to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 rounded-full bg-radial from-red-500/25 via-transparent to-transparent blur-3xl pointer-events-none z-0" />
 
-      <svg viewBox="0 0 500 500" className="w-full h-full drop-shadow-2xl overflow-visible">
-        <defs>
-          {sectors.map((sec) => (
-            <clipPath id={sec.id} key={sec.id}>
-              <polygon points={sec.points} />
-            </clipPath>
-          ))}
-        </defs>
+      {/* 3D Transformed Graphic Wrapper */}
+      <div 
+        className="w-full h-full relative z-10 transition-transform duration-700 ease-out"
+        style={{
+          transform: "rotateY(-12deg) rotateX(6deg) rotateZ(-1deg) translateZ(15px)",
+          transformStyle: "preserve-3d"
+        }}
+      >
+        <svg 
+          viewBox="-15 -15 530 530" 
+          className="w-full h-full overflow-visible"
+          style={{
+            filter: "drop-shadow(-18px 24px 28px rgba(0,0,0,0.75)) drop-shadow(-4px 8px 12px rgba(60,2,8,0.6))"
+          }}
+        >
+          <defs>
+            {sectors.map((sec) => (
+              <clipPath id={sec.id} key={sec.id}>
+                <polygon points={sec.points} />
+              </clipPath>
+            ))}
+          </defs>
 
-        {/* Sectors with real community photos centered inside each wedge */}
-        {sectors.map((sec) => (
-          <g key={sec.id} className="cursor-pointer group">
-            <image
-              href={sec.image}
-              x={sec.imgX}
-              y={sec.imgY}
-              width={sec.imgW}
-              height={sec.imgH}
-              preserveAspectRatio="xMidYMid slice"
-              clipPath={`url(#${sec.id})`}
-              className="transition-all duration-500 group-hover:scale-105 pointer-events-none select-none"
-            />
-          </g>
-        ))}
-
-        {/* Solid Refined White Divider Spokes */}
-        {vertices.map((v, idx) => (
-          <line
-            key={idx}
-            x1={cx}
-            y1={cy}
-            x2={v.x}
-            y2={v.y}
-            stroke="#FFFFFF"
-            strokeWidth="5"
-            strokeLinecap="round"
+          {/* 3D Extruded Outer Rim Shadow/Bevel (Background slab depth effect) */}
+          <polygon
+            points={polygonPointsString}
+            fill="#3B0105"
+            stroke="#1D0003"
+            strokeWidth="14"
+            strokeLinejoin="round"
+            transform="translate(-6, 8)"
+            className="opacity-90"
           />
-        ))}
 
-        {/* Center Hub */}
-        <circle cx={cx} cy={cy} r="4.5" fill="#FFFFFF" />
+          {/* Sectors with real community photos centered inside each wedge */}
+          {sectors.map((sec) => (
+            <g key={sec.id} className="cursor-pointer group">
+              <image
+                href={sec.image}
+                x={sec.imgX}
+                y={sec.imgY}
+                width={sec.imgW}
+                height={sec.imgH}
+                preserveAspectRatio="xMidYMid slice"
+                clipPath={`url(#${sec.id})`}
+                className="transition-all duration-500 group-hover:scale-105 pointer-events-none select-none"
+              />
+            </g>
+          ))}
 
-        {/* Outer Faceted Polygonal White Rim */}
-        <polygon
-          points={polygonPointsString}
-          fill="none"
-          stroke="#FFFFFF"
-          strokeWidth="6"
-          strokeLinejoin="round"
-        />
-      </svg>
+          {/* Solid Refined White Divider Spokes */}
+          {vertices.map((v, idx) => (
+            <line
+              key={idx}
+              x1={cx}
+              y1={cy}
+              x2={v.x}
+              y2={v.y}
+              stroke="#FFFFFF"
+              strokeWidth="5"
+              strokeLinecap="round"
+            />
+          ))}
+
+          {/* Center Hub */}
+          <circle cx={cx} cy={cy} r="5" fill="#FFFFFF" />
+
+          {/* Outer Faceted Polygonal White Rim */}
+          <polygon
+            points={polygonPointsString}
+            fill="none"
+            stroke="#FFFFFF"
+            strokeWidth="6"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
     </div>
   )
 }

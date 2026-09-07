@@ -8,8 +8,8 @@ import { ArrowUp } from "lucide-react"
 import { LandingHeader } from "@/components/landing/LandingHeader"
 import { HeroSection } from "@/components/landing/HeroSection"
 import { PartnersSection } from "@/components/landing/PartnersSection"
-import { ReportShowcaseSection } from "@/components/landing/ReportShowcaseSection"
-import { PricingSection } from "@/components/landing/PricingSection"
+import { ReportShowcaseDetailedSection } from "@/components/landing/ReportShowcaseDetailedSection"
+import { AdvisoryServicesSection } from "@/components/landing/AdvisoryServicesSection"
 import { LandingFooter } from "@/components/landing/LandingFooter"
 
 export default function LandingPage() {
@@ -27,6 +27,22 @@ export default function LandingPage() {
       router.push("/projects")
     }
   }, [mounted, isAuthenticated, router])
+
+  React.useEffect(() => {
+    if (mounted) {
+      const hash = window.location.hash
+      if (hash) {
+        const id = hash.replace("#", "")
+        const timer = setTimeout(() => {
+          const el = document.getElementById(id)
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" })
+          }
+        }, 150)
+        return () => clearTimeout(timer)
+      }
+    }
+  }, [mounted])
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +74,8 @@ export default function LandingPage() {
       <main className="flex-1">
         <HeroSection />
         <PartnersSection />
-        <ReportShowcaseSection />
-        <PricingSection />
+        <ReportShowcaseDetailedSection />
+        <AdvisoryServicesSection />
       </main>
       <LandingFooter />
 

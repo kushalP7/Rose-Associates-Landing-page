@@ -10,16 +10,10 @@ import {
   ChevronRight, 
   MapPin, 
   Mail, 
-  Globe, 
-  User, 
-  ArrowUp 
+  Globe 
 } from "lucide-react"
 
 export function LandingFooter() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
   return (
     <footer className="bg-slate-950 text-xs text-slate-300 font-sans">
       
@@ -155,13 +149,13 @@ export function LandingFooter() {
 
             <ul className="space-y-2.5 text-xs text-slate-300 font-medium">
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center gap-2 group">
+                <Link href="/#services" className="hover:text-white transition-colors flex items-center gap-2 group">
                   <ChevronRight className="w-3.5 h-3.5 text-[#E11D48] group-hover:translate-x-0.5 transition-transform shrink-0" />
                   <span>Economic Development</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center gap-2 group">
+                <Link href="/#services" className="hover:text-white transition-colors flex items-center gap-2 group">
                   <ChevronRight className="w-3.5 h-3.5 text-[#E11D48] group-hover:translate-x-0.5 transition-transform shrink-0" />
                   <span>Real Estate Advisory</span>
                 </Link>
@@ -204,7 +198,7 @@ export function LandingFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors flex items-center gap-2 group">
+                <Link href="/#services" className="hover:text-white transition-colors flex items-center gap-2 group">
                   <ChevronRight className="w-3.5 h-3.5 text-[#E11D48] group-hover:translate-x-0.5 transition-transform shrink-0" />
                   <span>Advisory Services</span>
                 </Link>
@@ -222,7 +216,7 @@ export function LandingFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/report-showcase" className="hover:text-white transition-colors flex items-center gap-2 group">
+                <Link href="/#report-showcase" className="hover:text-white transition-colors flex items-center gap-2 group">
                   <ChevronRight className="w-3.5 h-3.5 text-[#E11D48] group-hover:translate-x-0.5 transition-transform shrink-0" />
                   <span>Report Showcase</span>
                 </Link>
@@ -279,20 +273,6 @@ export function LandingFooter() {
                   roseassociates.com
                 </a>
               </div>
-
-              {/* Styled Portal CTA Button */}
-              <div className="pt-2">
-                <Link 
-                  href="/login" 
-                  className="bg-[#B5111B] hover:bg-[#8F0D15] text-white px-4 py-2.5 rounded-xl text-xs font-extrabold flex items-center justify-between gap-2 shadow-md hover:shadow-lg transition-all group"
-                >
-                  <span className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    <span>Client Portal Login</span>
-                  </span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
             </div>
           </div>
 
@@ -302,22 +282,6 @@ export function LandingFooter() {
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
             &copy; {new Date().getFullYear()} Rose Associates. All rights reserved. Davidson, NC.
-          </div>
-
-          <div className="flex items-center gap-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Verified Public & Government Data</span>
-            </div>
-
-            <button
-              onClick={scrollToTop}
-              className="w-9 h-9 rounded-xl bg-[#B5111B] hover:bg-[#8F0D15] text-white flex items-center justify-center transition-all shadow-md cursor-pointer group"
-              title="Back to Top"
-              aria-label="Back to Top"
-            >
-              <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
           </div>
         </div>
 

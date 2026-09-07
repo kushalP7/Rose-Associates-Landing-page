@@ -197,236 +197,325 @@ export function AboutUsSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {/* Executive Leadership Stack (Horizontal Row Format) */}
+          <div className="space-y-6">
             
-            {/* Team Member 1: Kathleen Rose */}
-            <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-6 space-y-6 flex flex-col justify-between hover:border-[#B5111B]/40 hover:shadow-xl transition-all group overflow-hidden">
-              <div className="space-y-5">
-                
-                {/* Blurred Backdrop Headshot Container */}
-                <div className="relative rounded-2xl overflow-hidden bg-slate-900 p-6 flex items-center justify-center border border-slate-200/80 shadow-inner group-hover:border-[#B5111B]/30 transition-colors">
-                  {/* Soft Blurred Background Image Fill */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-60 scale-125 transition-all duration-500 group-hover:scale-140" 
-                    style={{ backgroundImage: `url('/kathleen_rose.png')` }} 
-                  />
-                  {/* Subtle Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/30 to-slate-950/40" />
+            {/* Executive 1: Kathleen Rose */}
+            <div className="bg-slate-50/70 hover:bg-white rounded-3xl border border-slate-200/90 hover:border-red-950/20 p-6 sm:p-8 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 group">
+              
+              {/* Left Column: Headshot Card */}
+              <div className="w-full md:w-56 lg:w-64 shrink-0 flex flex-col items-center justify-between p-5 bg-gradient-to-b from-slate-900 via-slate-900 to-[#3B0105] rounded-2xl border border-slate-800 shadow-md relative overflow-hidden text-center min-h-[220px]">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-40 scale-150 transition-transform duration-700 group-hover:scale-175"
+                  style={{ backgroundImage: `url('/kathleen_rose.png')` }} 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
-                  {/* Crisp Foreground Avatar */}
-                  <div className="relative z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-white/90 shadow-2xl overflow-hidden bg-slate-200 group-hover:scale-105 transition-transform duration-300">
+                <div className="relative z-10 space-y-3 w-full flex flex-col items-center">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-white/90 shadow-2xl overflow-hidden bg-slate-800 group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src="/kathleen_rose.png" 
                       alt="Kathleen Rose, CCIM, CRE"
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
-                </div>
-
-                {/* Header */}
-                <div className="space-y-1.5 text-center">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-[#B5111B] text-[11px] font-extrabold uppercase tracking-wide">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#B5111B] text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
                     FOUNDER & PRESIDENT
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900 tracking-tight">
-                    Kathleen Rose, <span className="text-[#B5111B]">CCIM, CRE</span>
-                  </h3>
-                  <div className="text-xs font-bold text-slate-600">
-                    &ldquo;Chief Problem Solver&rdquo;
-                  </div>
+                  </span>
                 </div>
 
-                {/* Bio & Credentials */}
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                  Over three decades of commercial real estate and economic development leadership. Serves on the Board of Directors for the Counselors of Real Estate (CRE), CCIM Life Member & Faculty, and active ULI Carolinas WLI Champion. Recipient of Charlotte Business Journal&apos;s Top 25 Women in Business award.
-                </p>
+                <div className="relative z-10 pt-3 border-t border-white/10 w-full flex flex-col items-center gap-2 mt-3">
+                  <div className="text-center">
+                    <div className="text-[11px] font-extrabold text-rose-200/90 italic">
+                      &ldquo;Chief Problem Solver&rdquo;
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                      30+ Years Advisory Experience
+                    </div>
+                  </div>
 
-                <div className="space-y-2 pt-2 border-t border-slate-200/80 text-[11px] text-slate-700 font-medium">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>CCIM (Certified Commercial Investment Member) Life Faculty</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>CRE (Counselor of Real Estate) Board of Directors</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>NC Downtown Development Association Board</span>
+                  {/* Social / Contact Icons */}
+                  <div className="flex items-center justify-center gap-2 pt-1">
+                    <a
+                      href="mailto:krose@roseassociates.com"
+                      className="p-2 rounded-xl bg-white/10 hover:bg-[#B5111B] text-white border border-white/15 transition-colors"
+                      title="Email Kathleen Rose"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/roseassociates/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-xl bg-white/10 hover:bg-[#0A66C2] text-white border border-white/15 transition-colors"
+                      aria-label="Kathleen Rose LinkedIn"
+                      title="LinkedIn Profile"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
-
               </div>
 
-              {/* Footer Contacts */}
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
-                <a
-                  href="mailto:krose@roseassociates.com"
-                  className="font-bold text-[#B5111B] hover:underline flex items-center gap-1.5"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>krose@roseassociates.com</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/roseassociates/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-[#B5111B] hover:border-red-200 transition-colors"
-                  aria-label="Kathleen Rose LinkedIn"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                  </svg>
-                </a>
+              {/* Right Column: Profile Content & Badges */}
+              <div className="flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                        Kathleen Rose, <span className="text-[#B5111B]">CCIM, CRE</span>
+                      </h3>
+                      <p className="text-xs font-bold text-slate-500 mt-0.5">
+                        President & Founder, Rose Associates Advisory Firm
+                      </p>
+                    </div>
+
+                    <a
+                      href="mailto:krose@roseassociates.com"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#B5111B] hover:bg-[#8F0D15] text-white text-xs font-bold shadow-xs transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>krose@roseassociates.com</span>
+                    </a>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    Over three decades of commercial real estate and economic development leadership. Serves on the Board of Directors for the Counselors of Real Estate (CRE), CCIM Life Member & Faculty, and active ULI Carolinas WLI Champion. Recipient of Charlotte Business Journal&apos;s Top 25 Women in Business award.
+                  </p>
+                </div>
+
+                {/* Key Appointments & Affiliations */}
+                <div className="space-y-1.5 pt-2">
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    KEY APPOINTMENTS & AFFILIATIONS
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "CCIM (Certified Commercial Investment Member) Life Faculty",
+                      "CRE (Counselors of Real Estate) Board of Directors",
+                      "NC Downtown Development Association Board",
+                      "ULI Carolinas WLI Champion",
+                      "Charlotte Business Journal Top 25 Women in Business"
+                    ].map((badge, idx) => (
+                      <span key={idx} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200/90 text-slate-700 px-3 py-1.5 rounded-xl shadow-2xs">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
+                        <span>{badge}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
+
             </div>
 
-            {/* Team Member 2: Daniel Bellot */}
-            <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-6 space-y-6 flex flex-col justify-between hover:border-[#B5111B]/40 hover:shadow-xl transition-all group overflow-hidden">
-              <div className="space-y-5">
-                
-                {/* Blurred Backdrop Headshot Container */}
-                <div className="relative rounded-2xl overflow-hidden bg-slate-900 p-6 flex items-center justify-center border border-slate-200/80 shadow-inner group-hover:border-[#B5111B]/30 transition-colors">
-                  {/* Soft Blurred Background Image Fill */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-60 scale-125 transition-all duration-500 group-hover:scale-140" 
-                    style={{ backgroundImage: `url('/daniel_bellot.png')` }} 
-                  />
-                  {/* Subtle Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/30 to-slate-950/40" />
+            {/* Executive 2: Daniel Bellot */}
+            <div className="bg-slate-50/70 hover:bg-white rounded-3xl border border-slate-200/90 hover:border-red-950/20 p-6 sm:p-8 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 group">
+              
+              {/* Left Column: Headshot Card */}
+              <div className="w-full md:w-56 lg:w-64 shrink-0 flex flex-col items-center justify-between p-5 bg-gradient-to-b from-slate-900 via-slate-900 to-[#1F2937] rounded-2xl border border-slate-800 shadow-md relative overflow-hidden text-center min-h-[220px]">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-40 scale-150 transition-transform duration-700 group-hover:scale-175"
+                  style={{ backgroundImage: `url('/daniel_bellot.png')` }} 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
-                  {/* Crisp Foreground Avatar */}
-                  <div className="relative z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-white/90 shadow-2xl overflow-hidden bg-slate-200 group-hover:scale-105 transition-transform duration-300">
+                <div className="relative z-10 space-y-3 w-full flex flex-col items-center">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-white/90 shadow-2xl overflow-hidden bg-slate-800 group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src="/daniel_bellot.png" 
                       alt="Daniel Bellot"
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
-                </div>
-
-                {/* Header */}
-                <div className="space-y-1.5 text-center">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 text-slate-800 text-[11px] font-extrabold uppercase tracking-wide">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#B5111B] text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
                     CHIEF ANALYST & BROKER
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900 tracking-tight">
-                    Daniel Bellot
-                  </h3>
-                  <div className="text-xs font-bold text-slate-600">
-                    Economist & Commercial Broker
-                  </div>
+                  </span>
                 </div>
 
-                {/* Bio & Credentials */}
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                  B.S. in Economics from UNC Charlotte. Leads the firm&apos;s data analytics, GIS-based spatial research, site selection modeling, and commercial brokerage operations. Experienced in municipal scorecard compilation and economic health assessments across North Carolina.
-                </p>
+                <div className="relative z-10 pt-3 border-t border-white/10 w-full flex flex-col items-center gap-2 mt-3">
+                  <div className="text-center">
+                    <div className="text-[11px] font-extrabold text-slate-200">
+                      Economist & Spatial Analyst
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                      UNC Charlotte Economics
+                    </div>
+                  </div>
 
-                <div className="space-y-2 pt-2 border-t border-slate-200/80 text-[11px] text-slate-700 font-medium">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>B.S. Economics (UNC Charlotte)</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>NC Licensed Commercial Broker</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>ULI Young Leaders & NCDDA Associate</span>
+                  {/* Social / Contact Icons */}
+                  <div className="flex items-center justify-center gap-2 pt-1">
+                    <a
+                      href="mailto:dbellot@roseassociates.com"
+                      className="p-2 rounded-xl bg-white/10 hover:bg-[#B5111B] text-white border border-white/15 transition-colors"
+                      title="Email Daniel Bellot"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/daniel-bellot-60b25811b/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-xl bg-white/10 hover:bg-[#0A66C2] text-white border border-white/15 transition-colors"
+                      aria-label="Daniel Bellot LinkedIn"
+                      title="LinkedIn Profile"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
-
               </div>
 
-              {/* Footer Contacts */}
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
-                <a
-                  href="mailto:dbellot@roseassociates.com"
-                  className="font-bold text-[#B5111B] hover:underline flex items-center gap-1.5"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>dbellot@roseassociates.com</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/daniel-bellot-60b25811b/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-[#B5111B] hover:border-red-200 transition-colors"
-                  aria-label="Daniel Bellot LinkedIn"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                  </svg>
-                </a>
+              {/* Right Column: Profile Content & Badges */}
+              <div className="flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                        Daniel Bellot
+                      </h3>
+                      <p className="text-xs font-bold text-slate-500 mt-0.5">
+                        Chief Analyst, GIS Spatial Research & Commercial Broker
+                      </p>
+                    </div>
+
+                    <a
+                      href="mailto:dbellot@roseassociates.com"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#B5111B] hover:bg-[#8F0D15] text-white text-xs font-bold shadow-xs transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>dbellot@roseassociates.com</span>
+                    </a>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    B.S. in Economics from UNC Charlotte. Leads the firm&apos;s data analytics, GIS-based spatial research, site selection modeling, and commercial brokerage operations. Experienced in municipal scorecard compilation and economic health assessments across North Carolina.
+                  </p>
+                </div>
+
+                {/* Key Appointments & Affiliations */}
+                <div className="space-y-1.5 pt-2">
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    SPECIALIZATIONS & CERTIFICATIONS
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "B.S. Economics (UNC Charlotte Belk College of Business)",
+                      "NC Licensed Commercial Broker",
+                      "ULI Young Leaders Member",
+                      "NCDDA Associate Member",
+                      "GIS & Spatial Analytics Lead"
+                    ].map((badge, idx) => (
+                      <span key={idx} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200/90 text-slate-700 px-3 py-1.5 rounded-xl shadow-2xs">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
+                        <span>{badge}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
+
             </div>
 
-            {/* Team Member 3: Dr. William McCoy (Emeritus) */}
-            <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-6 space-y-6 flex flex-col justify-between hover:border-[#B5111B]/40 hover:shadow-xl transition-all group overflow-hidden">
-              <div className="space-y-5">
-                
-                {/* Blurred Backdrop Headshot Container */}
-                <div className="relative rounded-2xl overflow-hidden bg-slate-900 p-6 flex items-center justify-center border border-slate-200/80 shadow-inner group-hover:border-[#B5111B]/30 transition-colors">
-                  {/* Soft Blurred Background Image Fill */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-60 scale-125 transition-all duration-500 group-hover:scale-140" 
-                    style={{ backgroundImage: `url('/dr_william_mccoy.png')` }} 
-                  />
-                  {/* Subtle Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/30 to-slate-950/40" />
+            {/* Executive 3: Dr. William McCoy */}
+            <div className="bg-slate-50/70 hover:bg-white rounded-3xl border border-slate-200/90 hover:border-red-950/20 p-6 sm:p-8 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 group">
+              
+              {/* Left Column: Headshot Card */}
+              <div className="w-full md:w-56 lg:w-64 shrink-0 flex flex-col items-center justify-between p-5 bg-gradient-to-b from-slate-900 via-slate-900 to-[#3B0105] rounded-2xl border border-slate-800 shadow-md relative overflow-hidden text-center min-h-[220px]">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center filter blur-xl opacity-40 scale-150 transition-transform duration-700 group-hover:scale-175"
+                  style={{ backgroundImage: `url('/dr_william_mccoy.png')` }} 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
-                  {/* Crisp Foreground Avatar */}
-                  <div className="relative z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-white/90 shadow-2xl overflow-hidden bg-slate-200 group-hover:scale-105 transition-transform duration-300">
+                <div className="relative z-10 space-y-3 w-full flex flex-col items-center">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-white/90 shadow-2xl overflow-hidden bg-slate-800 group-hover:scale-105 transition-transform duration-300">
                     <img 
                       src="/dr_william_mccoy.png" 
                       alt="Dr. William McCoy"
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
-                </div>
-
-                {/* Header */}
-                <div className="space-y-1.5 text-center">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] font-extrabold uppercase tracking-wide">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#B5111B] text-white text-[10px] font-black uppercase tracking-wider shadow-xs">
                     SENIOR ADVISOR EMERITUS
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900 tracking-tight">
-                    Dr. William McCoy
-                  </h3>
-                  <div className="text-xs font-bold text-slate-600">
-                    Urban Planning & Policy Expert
-                  </div>
+                  </span>
                 </div>
 
-                {/* Bio & Credentials */}
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                  Retired Director of the UNC Charlotte Urban Institute and Professor Emeritus of Political Science. Ph.D. from Univ. of Tennessee. Brings over four decades of academic rigor to community engagement, public policy surveys, land use planning, and regional housing studies.
-                </p>
+                <div className="relative z-10 pt-3 border-t border-white/10 w-full flex flex-col items-center gap-2 mt-3">
+                  <div className="text-center">
+                    <div className="text-[11px] font-extrabold text-rose-200">
+                      Urban Planning & Policy
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                      40+ Years Academic Rigor
+                    </div>
+                  </div>
 
-                <div className="space-y-2 pt-2 border-t border-slate-200/80 text-[11px] text-slate-700 font-medium">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>Ph.D. Political Science (Univ. of Tennessee)</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>Former Director UNC Charlotte Urban Institute</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
-                    <span>NC National Bank Teaching Award Winner</span>
+                  {/* Social / Contact Icons */}
+                  <div className="flex items-center justify-center gap-2 pt-1">
+                    <a
+                      href="mailto:info@roseassociates.com"
+                      className="p-2 rounded-xl bg-white/10 hover:bg-[#B5111B] text-white border border-white/15 transition-colors"
+                      title="Email Dr. William McCoy"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
-
               </div>
 
-              {/* Footer Contacts */}
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
-                <span>Senior Policy Advisor</span>
-                <span className="font-mono text-[11px]">UNC Charlotte Professor Emeritus</span>
+              {/* Right Column: Profile Content & Badges */}
+              <div className="flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                        Dr. William McCoy
+                      </h3>
+                      <p className="text-xs font-bold text-slate-500 mt-0.5">
+                        Retired Director, UNC Charlotte Urban Institute & Professor Emeritus
+                      </p>
+                    </div>
+
+                    <a
+                      href="mailto:info@roseassociates.com"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#B5111B] hover:bg-[#8F0D15] text-white text-xs font-bold shadow-xs transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>info@roseassociates.com</span>
+                    </a>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    Retired Director of the UNC Charlotte Urban Institute and Professor Emeritus of Political Science. Ph.D. from Univ. of Tennessee. Brings over four decades of academic rigor to community engagement, public policy surveys, land use planning, and regional housing studies.
+                  </p>
+                </div>
+
+                {/* Key Appointments & Affiliations */}
+                <div className="space-y-1.5 pt-2">
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    ACADEMIC CREDENTIALS & DISTINCTIONS
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Ph.D. Political Science (Univ. of Tennessee)",
+                      "Former Director UNC Charlotte Urban Institute",
+                      "Professor Emeritus of Political Science (UNC Charlotte)",
+                      "NC National Bank Teaching Award Winner",
+                      "40+ Years Public Policy Research"
+                    ].map((badge, idx) => (
+                      <span key={idx} className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-slate-200/90 text-slate-700 px-3 py-1.5 rounded-xl shadow-2xs">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B5111B] shrink-0" />
+                        <span>{badge}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
+
             </div>
 
           </div>

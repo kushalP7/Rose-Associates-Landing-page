@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { Gauge } from "lucide-react"
 
 export function GaugeSpeedometerChart({
   score = 6.4,
@@ -13,14 +14,21 @@ export function GaugeSpeedometerChart({
 }) {
   const angle = -90 + (score / max) * 180
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-5 sm:p-6 space-y-4 flex flex-col justify-between hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-6 flex flex-col justify-between hover:shadow-md transition-shadow">
       <div className="space-y-0.5 border-b border-slate-100 pb-3">
-        <h3 className="text-sm font-bold text-slate-900">Overall Project Score</h3>
-        <p className="text-[10px] text-slate-400 font-medium">Aggregated performance across all core metrics</p>
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-lg bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0">
+            <Gauge className="w-4 h-4" />
+          </div>
+          <div>
+            <h3 className="text-base font-bold text-slate-900">Overall Project Score</h3>
+            <p className="text-xs text-slate-400 font-medium">Aggregated performance across core metrics</p>
+          </div>
+        </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center py-2 relative">
-        <svg viewBox="0 0 200 120" className="w-52 h-32">
+      <div className="flex flex-col items-center justify-center py-3 relative">
+        <svg viewBox="0 0 220 135" className="w-60 h-40">
           <defs>
             <linearGradient id="gaugeGradSpectrum" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#EF4444" />
@@ -30,28 +38,28 @@ export function GaugeSpeedometerChart({
             </linearGradient>
           </defs>
           <path
-            d="M 25 95 A 75 75 0 0 1 175 95"
+            d="M 25 105 A 85 85 0 0 1 195 105"
             fill="none"
             stroke="#F1F5F9"
-            strokeWidth="16"
+            strokeWidth="18"
             strokeLinecap="round"
           />
           <path
-            d="M 25 95 A 75 75 0 0 1 175 95"
+            d="M 25 105 A 85 85 0 0 1 195 105"
             fill="none"
             stroke="url(#gaugeGradSpectrum)"
-            strokeWidth="16"
+            strokeWidth="18"
             strokeLinecap="round"
           />
-          <g transform={`rotate(${angle} 100 95)`}>
-            <line x1="100" y1="95" x2="100" y2="40" stroke="#1E293B" strokeWidth="3.5" strokeLinecap="round" />
-            <circle cx="100" cy="95" r="6" fill="#1E293B" />
-            <circle cx="100" cy="95" r="2.5" fill="#FFFFFF" />
+          <g transform={`rotate(${angle} 110 105)`}>
+            <line x1="110" y1="105" x2="110" y2="44" stroke="#1E293B" strokeWidth="4" strokeLinecap="round" />
+            <circle cx="110" cy="105" r="7" fill="#1E293B" />
+            <circle cx="110" cy="105" r="3" fill="#FFFFFF" />
           </g>
         </svg>
         <div className="text-center pt-1">
-          <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            {score} <span className="text-xs sm:text-sm font-normal text-slate-400">/{max}</span>
+          <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            {score} <span className="text-sm font-normal text-slate-400">/{max}</span>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Calculator, Activity, FileText, ArrowRight, Check } from "lucide-react"
+import { Check } from "lucide-react"
 
 export function PricingSection() {
   const reportPrice = 1000
@@ -13,7 +13,7 @@ export function PricingSection() {
     <section id="pricing-section" className="scroll-mt-20 py-12 sm:py-16 bg-slate-50/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
-        {/* Header & Formula Pill */}
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
             Billing Plan Options
@@ -21,63 +21,6 @@ export function PricingSection() {
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Select between a single scorecard audit report payment or our full All-In-One platform subscription package.
           </p>
-
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#B5111B] bg-red-50 px-4 py-2 rounded-full border border-red-200 shadow-2xs">
-            <Calculator className="w-4 h-4 text-[#B5111B]" />
-            <span>Plan Calculation: <strong className="font-extrabold text-slate-900">${reportPrice} (Report Plan) + ${subscriptionPrice} (Subscription Plan) = ${totalPlanPrice} / Year</strong></span>
-          </div>
-        </div>
-
-        {/* Sequential Billing Workflow Card */}
-        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-2xs p-6 sm:p-8 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-lg bg-red-50 text-[#B5111B] flex items-center justify-center">
-                <Activity className="w-4 h-4" />
-              </div>
-              <span className="text-xs font-black uppercase tracking-wider text-slate-900">
-                Billing Plan Architecture
-              </span>
-            </div>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-2xs w-fit flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Active 2-Plan System</span>
-            </span>
-          </div>
-
-          <div className="flex flex-col lg:flex-row items-center gap-3">
-            
-            <div className="flex-1 p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 flex items-start gap-4 w-full h-full">
-              <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0">
-                <FileText className="w-5 h-5" />
-              </div>
-              <div className="space-y-1">
-                <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">Option 01: Single Audit</div>
-                <div className="font-extrabold text-slate-900 text-sm">Single Report Plan (${reportPrice} / Report)</div>
-                <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                  Single project audit calculation. Unlocks executive scorecard PDF generation & seal.
-                </p>
-              </div>
-            </div>
-
-            <div className="hidden lg:flex items-center justify-center text-slate-300 shrink-0 px-1">
-              <ArrowRight className="w-5 h-5" />
-            </div>
-
-            <div className="flex-1 p-5 bg-slate-50/70 rounded-2xl border border-slate-200/80 flex items-start gap-4 w-full h-full">
-              <div className="w-10 h-10 rounded-xl bg-red-50 text-[#B5111B] flex items-center justify-center shrink-0">
-                <Calculator className="w-5 h-5" />
-              </div>
-              <div className="space-y-1">
-                <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">Option 02: All-In-One Package</div>
-                <div className="font-extrabold text-slate-900 text-sm">Total All-In-One Plan (${totalPlanPrice} / Year)</div>
-                <p className="text-xs text-slate-500 font-normal leading-relaxed">
-                  Complete bundle: ${reportPrice} Report + ${subscriptionPrice} Subscription = ${totalPlanPrice}/yr.
-                </p>
-              </div>
-            </div>
-
-          </div>
         </div>
 
         {/* 2 Real Plans Section */}
@@ -136,43 +79,62 @@ export function PricingSection() {
 
           {/* PLAN 2: All-In-One Solution ($1,800 / Year) */}
           <div className="bg-white rounded-2xl border-2 border-[#B5111B] p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-lg relative overflow-hidden ring-4 ring-[#B5111B]/10">
-            <div className="absolute top-0 right-0 bg-[#B5111B] text-white text-[10px] font-black uppercase tracking-wider py-1 px-3.5 rounded-bl-xl shadow-xs">
-              All-In-One Solution
+            <div className="absolute top-0 right-0 bg-[#B5111B] text-white text-[10px] font-black uppercase tracking-wider py-1 px-3.5 rounded-bl-xl shadow-xs flex items-center gap-1.5">
+              <span>All-In-One Solution</span>
+              <span className="bg-white text-[#B5111B] text-[9px] font-black px-1.5 py-0.5 rounded-sm uppercase">Save 20%</span>
             </div>
 
             <div className="space-y-5">
               <div className="space-y-1.5">
-                <div className="text-xs font-black text-[#B5111B] uppercase tracking-wider">Complete Package</div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-black text-[#B5111B] uppercase tracking-wider">Complete Package</span>
+                  <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-sm border border-emerald-200">
+                    20% OFF Subscription
+                  </span>
+                </div>
                 <h3 className="text-xl font-bold text-slate-900">Total All-In-One Plan</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Includes Single Report Plan (${reportPrice}) + Platform Subscription (${subscriptionPrice}). Clients get updated reports as project data changes.
+                  Includes Single Report Plan ($1,000) + Platform Subscription ($1,000 value with 20% OFF = $800). Clients get updated reports as project data changes.
                 </p>
               </div>
 
-              <div className="p-3.5 bg-red-50/90 border border-red-200 rounded-xl space-y-1 text-xs">
-                <div className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">
-                  Plan Calculation Formula
+              <div className="p-3.5 bg-red-50/90 border border-red-200 rounded-xl space-y-1.5 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-extrabold text-[#B5111B] uppercase tracking-wider">
+                    Plan Calculation Formula
+                  </span>
+                  <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-sm border border-emerald-200/80">
+                    Save $200 (20% OFF)
+                  </span>
                 </div>
                 <div className="font-extrabold text-slate-900 text-xs sm:text-sm flex items-center gap-1.5 flex-wrap">
-                  <span>$1,000 Report + $800 Subscription</span>
-                  <span className="text-[#B5111B] font-black text-xs sm:text-sm">= $1,800 / Year</span>
+                  <span>$1,000 Report +</span>
+                  <span className="line-through text-slate-400 font-semibold">$1,000</span>
+                  <span className="text-emerald-700 font-bold">$800 Subscription</span>
+                  <span className="text-[#B5111B] font-black text-xs sm:text-sm whitespace-nowrap">= $1,800 / Year</span>
                 </div>
               </div>
 
               <div className="pt-2 border-t border-slate-100 space-y-1.5">
-                <div className="text-4xl font-black text-[#B5111B]">
-                  ${totalPlanPrice}
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-black text-[#B5111B]">${totalPlanPrice}</span>
                   <span className="text-xs font-semibold text-slate-400"> /Year</span>
+                  <span className="text-xs font-bold text-slate-400 line-through ml-1">$2,000</span>
+                  <span className="text-xs font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">Save 20%</span>
                 </div>
-                <span className="inline-block text-[11px] font-bold text-[#B5111B] bg-red-50 px-3 py-1 rounded-lg border border-red-200/80">
-                  $1,000 (Report Plan) + $800 (Subscription)
-                </span>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="inline-block text-[11px] font-bold text-[#B5111B] bg-red-50 px-3 py-1 rounded-lg border border-red-200/80">
+                    $1,000 (Report Plan) + $800 (Subscription)
+                  </span>
+                </div>
               </div>
 
               <ul className="space-y-3 pt-2 text-xs text-slate-700 font-medium">
                 <li className="flex items-center gap-2.5">
                   <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
-                  <span>Full Annual Platform Access ($800 Value)</span>
+                  <span>
+                    Full Annual Platform Access <span className="line-through text-slate-400 font-normal">$1,000</span> <span className="text-emerald-700 font-bold">($800 with 20% OFF)</span>
+                  </span>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Check className="w-4 h-4 text-[#B5111B] shrink-0" />
