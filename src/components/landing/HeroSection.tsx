@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { ShieldCheck } from "lucide-react"
+import { ShieldCheck, MapPin } from "lucide-react"
 import { CommunityWedgeWheel } from "./CommunityWedgeWheel"
 
 export function HeroSection() {
@@ -26,15 +26,17 @@ export function HeroSection() {
           {/* Left Content Column */}
           <div className="lg:col-span-7 xl:col-span-7 space-y-4 lg:space-y-5 z-10 max-w-xl lg:max-w-2xl">
             
-            {/* Header Badge */}
-            <div className="inline-flex items-center gap-2.5 p-1 pr-4 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/15 text-white shadow-xl shadow-black/20 hover:border-white/25 transition-all">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#B5111B] to-[#E11D48] text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider shadow-xs">
-                <ShieldCheck className="w-3.5 h-3.5 text-white" />
+            {/* Header Heritage & Location Bar - Left Vertical Crimson Accent Bar (Single Line) */}
+            <div className="border-l-2 border-[#E11D48] pl-3 py-0.5 flex flex-wrap items-center gap-2.5 sm:gap-3">
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-black uppercase tracking-widest text-[#E11D48]">
+                <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                 <span>ESTABLISHED 1992</span>
-              </span>
-              <span className="text-rose-100/90 font-bold tracking-wider uppercase text-[10px] sm:text-[11px] pr-1">
-                Davidson, North Carolina
-              </span>
+              </div>
+              <span className="text-white/30 text-xs font-normal">•</span>
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-rose-100/90">
+                <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <span>Davidson, North Carolina</span>
+              </div>
             </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[44px] 2xl:text-[50px] font-black text-white tracking-tight leading-[1.08]">
