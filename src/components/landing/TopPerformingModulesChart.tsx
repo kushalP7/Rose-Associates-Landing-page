@@ -40,20 +40,30 @@ export function TopPerformingModulesChart() {
           <text x="190" y="133" className="text-2xl font-black fill-emerald-600 font-sans" textAnchor="middle">8.0 avg</text>
 
           {/* 5 Radial Leader Labels Fitted Around Graph */}
-          <circle cx="236" cy="70" r="3.5" fill="#14532D" />
-          <text x="244" y="74" className="text-[10.5px] font-extrabold fill-slate-800 font-sans" textAnchor="start">01 Housing <tspan className="fill-emerald-700 font-black">(8.8)</tspan></text>
+          {/* 01 Housing */}
+          <line x1="237" y1="73" x2="252" y2="58" stroke="#14532D" strokeWidth="1" strokeDasharray="2 2" opacity="0.6" />
+          <circle cx="252" cy="58" r="3.5" fill="#14532D" />
+          <text x="260" y="62" className="text-xs font-black fill-slate-900 font-sans" textAnchor="start">01 Housing <tspan className="fill-emerald-700 font-black">(8.8)</tspan></text>
 
-          <circle cx="261" cy="128" r="3.5" fill="#15803D" />
-          <text x="269" y="131" className="text-[10.5px] font-extrabold fill-slate-800 font-sans" textAnchor="start">02 Safety <tspan className="fill-emerald-700 font-black">(8.4)</tspan></text>
+          {/* 02 Safety */}
+          <line x1="256" y1="120" x2="274" y2="120" stroke="#15803D" strokeWidth="1" strokeDasharray="2 2" opacity="0.6" />
+          <circle cx="274" cy="120" r="3.5" fill="#15803D" />
+          <text x="282" y="124" className="text-xs font-black fill-slate-900 font-sans" textAnchor="start">02 Safety <tspan className="fill-emerald-700 font-black">(8.4)</tspan></text>
 
-          <circle cx="204" cy="191" r="3.5" fill="#16A34A" />
-          <text x="204" y="207" className="text-[10.5px] font-extrabold fill-slate-800 font-sans" textAnchor="middle">03 Labor <tspan className="fill-emerald-700 font-black">(7.9)</tspan></text>
+          {/* 03 Labor */}
+          <line x1="190" y1="186" x2="190" y2="204" stroke="#16A34A" strokeWidth="1" strokeDasharray="2 2" opacity="0.6" />
+          <circle cx="190" cy="204" r="3.5" fill="#16A34A" />
+          <text x="190" y="220" className="text-xs font-black fill-slate-900 font-sans" textAnchor="middle">03 Labor <tspan className="fill-emerald-700 font-black">(7.9)</tspan></text>
 
-          <circle cx="118" cy="140" r="3.5" fill="#22C55E" />
-          <text x="110" y="143" className="text-[10.5px] font-extrabold fill-slate-800 font-sans" textAnchor="end">04 Health <tspan className="fill-emerald-700 font-black">(7.6)</tspan></text>
+          {/* 04 Health */}
+          <line x1="124" y1="120" x2="106" y2="120" stroke="#22C55E" strokeWidth="1" strokeDasharray="2 2" opacity="0.6" />
+          <circle cx="106" cy="120" r="3.5" fill="#22C55E" />
+          <text x="98" y="124" className="text-xs font-black fill-slate-900 font-sans" textAnchor="end">04 Health <tspan className="fill-emerald-700 font-black">(7.6)</tspan></text>
 
-          <circle cx="136" cy="70" r="3.5" fill="#4ADE80" />
-          <text x="128" y="74" className="text-[10.5px] font-extrabold fill-slate-800 font-sans" textAnchor="end">05 Transit <tspan className="fill-emerald-700 font-black">(7.2)</tspan></text>
+          {/* 05 Transit */}
+          <line x1="143" y1="73" x2="128" y2="58" stroke="#4ADE80" strokeWidth="1" strokeDasharray="2 2" opacity="0.6" />
+          <circle cx="128" cy="58" r="3.5" fill="#4ADE80" />
+          <text x="120" y="62" className="text-xs font-black fill-slate-900 font-sans" textAnchor="end">05 Transit <tspan className="fill-emerald-700 font-black">(7.2)</tspan></text>
         </svg>
       </div>
 
